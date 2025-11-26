@@ -1,26 +1,78 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --clr-black-manga: #001524;
+  --clr-seamount: #15616d;
+  --clr-peach: #ffecd1;
+  --clr-amber: #ff7d00;
+  --clr-chocolate: #78290f;
+  --surface: #000a12;
+  --surface-alt: #001524;
+  --surface-card: rgba(0, 21, 36, 0.6);
+  --foreground: #ffecd1;
+  --foreground-alt: #ffffff;
+  --accent-rotate: 0deg;
+  --font-body: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 @theme inline {
-  --color-background: var(--background);
+  --color-background: var(--surface);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
+  min-height: 100vh;
+  margin: 0;
+  background: 
+    radial-gradient(circle at 15% 15%, rgba(21, 97, 109, 0.15), transparent 40%),
+    radial-gradient(circle at 85% 85%, rgba(255, 125, 0, 0.12), transparent 40%),
+    linear-gradient(180deg, #000a12 0%, #001524 100%);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+  letter-spacing: -0.015em;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(255, 125, 0, 0.3);
+  color: #ffecd1;
+}
+
+/* Smooth scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--clr-black-manga);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--clr-seamount);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--clr-amber);
+}
+
+/* Custom animations */
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
 }
