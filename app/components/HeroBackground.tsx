@@ -9,23 +9,23 @@ export function HeroBackground() {
     const container = containerRef.current;
     if (!container) return;
 
-    const handleMouseMove = (e: MouseEvent) => {
-      const { clientX, clientY } = e;
-      const { innerWidth, innerHeight } = window;
-      
-      const x = (clientX / innerWidth) * 100;
-      const y = (clientY / innerHeight) * 100;
-      
-      container.style.setProperty("--mouse-x", `${x}%`);
-      container.style.setProperty("--mouse-y", `${y}%`);
-    };
+        const handleMouseMove = (e: Event) => {
+          const mouseEvent = e as MouseEvent;
+          const { clientX, clientY } = mouseEvent;
+          const { innerWidth, innerHeight } = window;
 
-    // Only listen to mouse move within the hero section
-    const heroSection = container.closest('section#hero');
-    if (heroSection) {
-      heroSection.addEventListener("mousemove", handleMouseMove);
-      return () => heroSection.removeEventListener("mousemove", handleMouseMove);
-    }
+          const x = (clientX / innerWidth) * 100;
+          const y = (clientY / innerHeight) * 100;
+
+          container.style.setProperty("--mouse-x", `${x}%`);
+          container.style.setProperty("--mouse-y", `${y}%`);
+        };
+
+        const heroSection = container.closest('section#hero');
+        if (heroSection) {
+          heroSection.addEventListener("mousemove", handleMouseMove);
+          return () => heroSection.removeEventListener("mousemove", handleMouseMove);
+        }
     
     return () => {};
   }, []);
