@@ -9,16 +9,16 @@ export function ValuesSection() {
       id="values"
       className="relative py-24 sm:py-32"
     >
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-20 text-center"
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          className="mb-16 text-center sm:mb-20"
         >
-          <div className="mb-6 inline-block rounded-full border border-[#ffecd1]/20 bg-[#001524]/50 px-6 py-2 backdrop-blur-sm">
-            <span className="text-sm text-[#ffecd1]/70">القيم</span>
+          <div className="mb-6 inline-block rounded-full border border-[#ffecd1]/20 bg-[#001524]/60 px-6 py-2.5 backdrop-blur-sm">
+            <span className="text-sm font-semibold text-[#ffecd1]">القيم</span>
           </div>
           <h2 className="mb-6 text-4xl font-bold text-[#ffecd1] sm:text-5xl">
             القيم التي نؤمن بها
@@ -36,10 +36,14 @@ export function ValuesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ delay: index * 0.1, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              className="group relative overflow-hidden rounded-3xl border border-[#ffecd1]/10 bg-gradient-to-br from-[#001524]/80 to-[#15616d]/20 p-8 backdrop-blur-sm transition-all hover:border-[#ff7d00]/50 hover:shadow-2xl hover:shadow-[#ff7d00]/10"
+              className="group relative overflow-hidden rounded-2xl sm:rounded-3xl border border-[#ffecd1]/10 bg-linear-to-br from-[#001524]/60 to-[#001524]/40 p-6 sm:p-8 backdrop-blur-md transition-all duration-500 hover:border-[#ff7d00]/50 hover:scale-105 hover:shadow-2xl hover:shadow-[#ff7d00]/20"
             >
-              {/* Decorative gradient */}
-              <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-[#ff7d00]/10 blur-2xl transition-all group-hover:bg-[#ff7d00]/20" />
+              <div
+                className="absolute inset-0 bg-linear-to-br from-[#ff7d00]/0 to-[#ff7d00]/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                style={{
+                  background: `linear-gradient(135deg, rgba(255, 125, 0, 0.15) 0%, transparent 100%)`,
+                }}
+              />
               
               <div className="relative z-10">
                 <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-[#ff7d00]/20">
@@ -53,8 +57,7 @@ export function ValuesSection() {
                 </p>
               </div>
 
-              {/* Hover effect line */}
-              <div className="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-[#ff7d00] to-[#ffecd1] transition-all duration-500 group-hover:w-full" />
+              <div className="absolute -bottom-8 -right-8 h-32 w-32 rounded-full bg-[#ff7d00]/5 blur-2xl transition-all duration-500 group-hover:bg-[#ff7d00]/10 group-hover:scale-150" />
             </motion.div>
           ))}
         </div>
@@ -62,4 +65,3 @@ export function ValuesSection() {
     </section>
   );
 }
-

@@ -5,32 +5,113 @@ import { motion } from "framer-motion";
 
 export function AppFooter() {
   return (
-    <footer className="relative isolate overflow-hidden border-t border-[#ffecd1]/10 bg-[#001524] py-16 sm:py-20">
+    <footer className="relative isolate overflow-hidden border-t border-[#ffecd1]/10 py-16 sm:py-20">
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <div
           className="absolute inset-0"
           style={{
             background: `
-              radial-gradient(circle at 20% 30%, rgba(21, 97, 109, 0.08) 0%, transparent 50%),
-              radial-gradient(circle at 80% 70%, rgba(255, 125, 0, 0.06) 0%, transparent 50%),
-              linear-gradient(180deg, #001524 0%, #000a12 100%)
+              radial-gradient(circle at 20% 30%, rgba(21, 97, 109, 0.12) 0%, transparent 50%),
+              radial-gradient(circle at 80% 70%, rgba(255, 125, 0, 0.1) 0%, transparent 50%),
+              linear-gradient(180deg, #000a12 0%, #001524 100%)
             `,
           }}
         />
-        <div className="absolute inset-0 opacity-[0.03]">
+
+        {/* Main 3D perspective grid */}
+        <div className="absolute inset-0" style={{ perspective: "1000px" }}>
           <div
             className="absolute inset-0"
             style={{
               backgroundImage: `
-                linear-gradient(rgba(255, 236, 209, 0.1) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 236, 209, 0.1) 1px, transparent 1px)
+                linear-gradient(rgba(255, 125, 0, 0.15) 1.5px, transparent 1.5px),
+                linear-gradient(90deg, rgba(255, 125, 0, 0.15) 1.5px, transparent 1.5px)
               `,
-              backgroundSize: "50px 50px",
+              backgroundSize: "80px 80px",
+              backgroundPosition: "center center",
+              animation: "gridPulse 4s ease-in-out infinite",
+              transform: "rotateX(60deg) scale(1.5)",
+              transformOrigin: "center center",
+              opacity: 0.4,
             }}
           />
         </div>
-        <div className="absolute top-1/4 left-1/4 h-96 w-96 rounded-full bg-[#ff7d00]/5 blur-[100px] animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 h-96 w-96 rounded-full bg-[#15616d]/5 blur-[100px] animate-pulse" style={{ animationDelay: "1s" }} />
+
+        {/* Secondary animated grid layer */}
+        <div className="absolute inset-0 opacity-20">
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `
+                linear-gradient(rgba(255, 236, 209, 0.3) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 236, 209, 0.3) 1px, transparent 1px)
+              `,
+              backgroundSize: "60px 60px",
+              animation: "gridMove 20s linear infinite",
+            }}
+          />
+        </div>
+
+        {/* Diagonal animated lines */}
+        <div className="absolute inset-0 opacity-10">
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 40px,
+                rgba(255, 125, 0, 0.3) 40px,
+                rgba(255, 125, 0, 0.3) 42px
+              )`,
+              animation: "slideRight 30s linear infinite",
+            }}
+          />
+        </div>
+
+        {/* Grid dots at intersections */}
+        <div className="absolute inset-0 opacity-30">
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `radial-gradient(circle, rgba(255, 125, 0, 0.6) 1.5px, transparent 1.5px)`,
+              backgroundSize: "80px 80px",
+              backgroundPosition: "0 0",
+              animation: "dotPulse 3s ease-in-out infinite",
+            }}
+          />
+        </div>
+
+        {/* Glowing horizontal scan lines */}
+        <div
+          className="absolute inset-0 opacity-20"
+          style={{
+            backgroundImage: `repeating-linear-gradient(
+              0deg,
+              transparent,
+              transparent 4px,
+              rgba(255, 125, 0, 0.1) 4px,
+              rgba(255, 125, 0, 0.1) 5px
+            )`,
+            animation: "scanlines 8s linear infinite",
+          }}
+        />
+
+        {/* Floating orbs */}
+        <div className="absolute top-1/4 left-1/4 h-96 w-96 rounded-full bg-[#ff7d00]/15 blur-[120px] animate-pulse" />
+        <div
+          className="absolute bottom-1/4 right-1/4 h-96 w-96 rounded-full bg-[#15616d]/15 blur-[120px] animate-pulse"
+          style={{ animationDelay: "1s" }}
+        />
+
+        {/* Vignette effect */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(circle at center, transparent 0%, rgba(0, 10, 18, 0.8) 100%)",
+          }}
+        />
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
@@ -51,7 +132,8 @@ export function AppFooter() {
               </p>
             </div>
             <p className="max-w-md text-base leading-relaxed text-[#ffecd1]/70">
-              الصناعية متخصصة في تمكين صُنّاع المحتوى والمؤثرين، وتطوير حضور العلامات التجارية عبر محتوى رقمي مستدام.
+              الصناعية متخصصة في تمكين صُنّاع المحتوى والمؤثرين، وتطوير حضور
+              العلامات التجارية عبر محتوى رقمي مستدام.
             </p>
             <Link
               href="#contact"
@@ -75,7 +157,9 @@ export function AppFooter() {
           </div>
 
           <div>
-            <h4 className="mb-6 text-lg font-bold text-[#ffecd1]">روابط سريعة</h4>
+            <h4 className="mb-6 text-lg font-bold text-[#ffecd1]">
+              روابط سريعة
+            </h4>
             <ul className="space-y-4">
               {[
                 { label: "قصتنا", href: "#story" },
@@ -96,7 +180,9 @@ export function AppFooter() {
           </div>
 
           <div>
-            <h4 className="mb-6 text-lg font-bold text-[#ffecd1]">تواصل معنا</h4>
+            <h4 className="mb-6 text-lg font-bold text-[#ffecd1]">
+              تواصل معنا
+            </h4>
             <ul className="space-y-4">
               <li>
                 <a
