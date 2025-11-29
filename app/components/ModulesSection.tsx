@@ -17,10 +17,7 @@ export function ModulesSection() {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="mb-16 text-center sm:mb-20"
         >
-          <div className="mb-6 inline-block rounded-full border border-[#ffecd1]/20 bg-[#001524]/60 px-6 py-2.5 backdrop-blur-sm">
-            <span className="text-sm font-semibold text-[#ffecd1]">الخدمات</span>
-          </div>
-          <h2 className="mb-6 text-4xl font-bold text-[#ffecd1] sm:text-5xl">
+          <h2 className="mb-6 text-5xl sm:text-6xl lg:text-7xl font-bold text-[#ffecd1]">
             وش نقدم لك بالصناعية؟
           </h2>
           <p className="mx-auto max-w-3xl text-lg text-[#ffecd1]/70">
