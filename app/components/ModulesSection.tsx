@@ -1,6 +1,6 @@
 "use client";
 
-import { servicesForInfluencers, servicesForCompanies, whatWeOffer } from "../lib/content";
+import { servicesForInfluencers, servicesForCompanies, whatWeOffer } from "../../constants/content";
 import { motion } from "framer-motion";
 
 export function ModulesSection() {

@@ -1,0 +1,184 @@
+"use client";
+
+import { useRef, useEffect } from "react";
+import { motion, useInView, useScroll, useTransform } from "framer-motion";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
+
+const reasons = [
+  {
+    title: "الإبداع المستمر",
+    description: "نولد أفكارًا أصلية تواكب ثقافة اليوم وتتماهى مع العلامات التجارية",
+    number: "01",
+  },
+  {
+    title: "التأثير الحقيقي",
+    description: "نحوّل التواجد الرقمي إلى نتائج ملموسة من نمو وانتشار وتأثير حقيقي",
+    number: "02",
+  },
+  {
+    title: "الموثوقية",
+    description: "تشغيل شفّاف، عقود واضحة، وتقارير دورية تبني الثقة مع شركائنا",
+    number: "03",
+  },
+  {
+    title: "التعاون الفعّال",
+    description: "نربط الشركات بالمؤثر المناسب ونبقي الجميع على مسار واحد",
+    number: "04",
+  },
+];
+
+export function WhyUsSection() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
+  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
+
+  useEffect(() => {
+    if (!sectionRef.current) return;
+
+    const cards = sectionRef.current.querySelectorAll(".why-card");
+
+    cards.forEach((card, index) => {
+      gsap.fromTo(
+        card,
+        {
+          y: 100,
+          opacity: 0,
+          scale: 0.8,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          scale: 1,
+          duration: 0.8,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: card,
+            start: "top bottom-=100",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    });
+  }, []);
+
+  return (
+    <section
+      ref={sectionRef}
+      className="relative py-32 px-6 lg:px-8 overflow-hidden"
+    >
+      <motion.div
+        style={{ y, opacity }}
+        className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full opacity-20 blur-3xl pointer-events-none"
+        animate={{
+          scale: [1, 1.2, 1],
+          rotate: [0, 180, 360],
+        }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+      >
+        <div
+          className="w-full h-full"
+          style={{
+            background: "radial-gradient(circle, #ff7d00 0%, transparent 70%)",
+          }}
+        />
+      </motion.div>
+
+      <div className="relative z-10 max-w-7xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-20"
+        >
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={isInView ? { opacity: 1, scale: 1 } : {}}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="inline-block px-6 py-2 rounded-full glass border border-[#ff7d00]/30 mb-8"
+          >
+            <span className="text-[#ff7d00] font-bold">لماذا الصناعية؟</span>
+          </motion.div>
+
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-black gradient-text mb-6 leading-tight pb-2 overflow-visible">
+            نحن مختلفون
+          </h2>
+          <p className="text-xl text-[#8892a6] max-w-3xl mx-auto leading-relaxed">
+            نجمع بين إدارة المواهب وابتكار المحتوى الاستراتيجي في نموذج حديث يضمن
+            النجاح المستدام
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {reasons.map((reason, index) => (
+            <div key={index} className="why-card group">
+              <div className="relative h-full glass p-8 md:p-10 rounded-3xl border border-[#ff7d00]/20 hover:border-[#ff7d00] transition-all duration-500 overflow-hidden">
+                <div className="absolute top-0 right-0 text-[150px] font-black text-[#ff7d00]/5 leading-none group-hover:text-[#ff7d00]/10 transition-colors">
+                  {reason.number}
+                </div>
+
+                <div className="relative z-10">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="w-12 h-12 flex items-center justify-center rounded-full bg-[#ff7d00]/20 border border-[#ff7d00]/40 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-500">
+                      <span className="text-[#ff7d00] font-bold text-xl">
+                        {reason.number}
+                      </span>
+                    </div>
+                    <h3 className="text-2xl md:text-3xl font-bold text-white group-hover:text-[#ff7d00] transition-colors">
+                      {reason.title}
+                    </h3>
+                  </div>
+
+                  <p className="text-[#8892a6] text-lg leading-relaxed">
+                    {reason.description}
+                  </p>
+                </div>
+
+                <div className="absolute inset-0 bg-gradient-to-br from-[#ff7d00]/0 via-[#ff7d00]/5 to-[#ff7d00]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-6"
+        >
+          {[
+            { value: "98%", label: "معدل رضا العملاء" },
+            { value: "3x", label: "نمو المتابعين" },
+            { value: "24/7", label: "دعم مستمر" },
+          ].map((stat, index) => (
+            <motion.div
+              key={index}
+              whileHover={{ scale: 1.05 }}
+              className="glass-strong p-8 rounded-2xl border border-[#ff7d00]/30 text-center hover:border-[#ff7d00] transition-all"
+            >
+              <div className="text-5xl font-black gradient-text-orange mb-3">
+                {stat.value}
+              </div>
+              <div className="text-[#8892a6] font-medium">{stat.label}</div>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+

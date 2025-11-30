@@ -50,10 +50,10 @@ export const servicesForCompanies = [
 ];
 
 export const faces = [
-  { name: "أبو عمر", role: "Host & Content Creator" },
-  { name: "عادل", role: "Digital Influencer" },
-  { name: "للي", role: "Lifestyle Creator" },
-  { name: "فواز", role: "Media Personality" },
+  { name: "أبو عمر", role: "Host & Content Creator", image: "/images/person/abu-omar.jpg" },
+  { name: "بندر", role: "Digital Influencer", image: "/images/person/bander.jpg" },
+  { name: "للي", role: "Lifestyle Creator", image: "/images/person/lele.jpg" },
+  { name: "أودين", role: "Media Personality", image: "/images/person/odin.jpg" },
 ];
 
 export const coreValues = [

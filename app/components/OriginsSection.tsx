@@ -1,6 +1,6 @@
 "use client";
 
-import { missionBlocks } from "../lib/content";
+import { missionBlocks } from "../constants/content";
 import { motion } from "framer-motion";
 
 export function OriginsSection() {
@@ -14,7 +14,7 @@ export function OriginsSection() {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="mb-16 text-center sm:mb-20"
         >
-          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-[#ffecd1]">
+          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-[#ffecd1] leading-tight pb-2 overflow-visible">
             مــن نـحن؟
           </h2>
         </motion.div>

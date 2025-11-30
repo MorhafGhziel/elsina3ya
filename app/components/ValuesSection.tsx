@@ -1,14 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { coreValues } from "../lib/content";
+import { coreValues } from "../constants/content";
 
 export function ValuesSection() {
   return (
-    <section
-      id="values"
-      className="relative py-24 sm:py-32"
-    >
+    <section id="values" className="relative py-24 sm:py-32">
       <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -32,7 +29,11 @@ export function ValuesSection() {
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
-              transition={{ delay: index * 0.1, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+              transition={{
+                delay: index * 0.1,
+                duration: 0.8,
+                ease: [0.22, 1, 0.36, 1],
+              }}
               className="group relative overflow-hidden rounded-2xl sm:rounded-3xl border border-[#ffecd1]/10 bg-linear-to-br from-[#001524]/60 to-[#001524]/40 p-6 sm:p-8 backdrop-blur-md transition-all duration-500 hover:border-[#ff7d00]/50 hover:scale-105 hover:shadow-2xl hover:shadow-[#ff7d00]/20"
             >
               <div
@@ -41,10 +42,12 @@ export function ValuesSection() {
                   background: `linear-gradient(135deg, rgba(255, 125, 0, 0.15) 0%, transparent 100%)`,
                 }}
               />
-              
+
               <div className="relative z-10">
                 <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-[#ff7d00]/20">
-                  <span className="text-lg font-bold text-[#ff7d00]">0{index + 1}</span>
+                  <span className="text-lg font-bold text-[#ff7d00]">
+                    0{index + 1}
+                  </span>
                 </div>
                 <h3 className="mb-4 text-xl font-bold text-[#ffecd1]">
                   {value.title}
