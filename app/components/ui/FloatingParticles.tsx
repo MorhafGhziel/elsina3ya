@@ -26,8 +26,12 @@ export function FloatingParticles() {
       speedX: number;
       speedY: number;
       opacity: number;
+      canvas: HTMLCanvasElement;
+      ctx: CanvasRenderingContext2D;
 
-      constructor() {
+      constructor(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D) {
+        this.canvas = canvas;
+        this.ctx = ctx;
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
         this.size = Math.random() * 2 + 0.5;
@@ -40,18 +44,17 @@ export function FloatingParticles() {
         this.x += this.speedX;
         this.y += this.speedY;
 
-        if (this.x > canvas.width) this.x = 0;
-        if (this.x < 0) this.x = canvas.width;
-        if (this.y > canvas.height) this.y = 0;
-        if (this.y < 0) this.y = canvas.height;
+        if (this.x > this.canvas.width) this.x = 0;
+        if (this.x < 0) this.x = this.canvas.width;
+        if (this.y > this.canvas.height) this.y = 0;
+        if (this.y < 0) this.y = this.canvas.height;
       }
 
       draw() {
-        if (!ctx) return;
-        ctx.fillStyle = `rgba(255, 125, 0, ${this.opacity})`;
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fill();
+        this.ctx.fillStyle = `rgba(255, 125, 0, ${this.opacity})`;
+        this.ctx.beginPath();
+        this.ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        this.ctx.fill();
       }
     }
 
@@ -59,10 +62,12 @@ export function FloatingParticles() {
     const particleCount = 100;
 
     for (let i = 0; i < particleCount; i++) {
-      particles.push(new Particle());
+      particles.push(new Particle(canvas, ctx));
     }
 
     const animate = () => {
+      if (!canvas || !ctx) return;
+      
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       particles.forEach((particle) => {
