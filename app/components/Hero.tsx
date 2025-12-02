@@ -44,12 +44,12 @@ export function Hero() {
         }}
       />
 
-      {/* Floating Person Image 1 - Right Side */}
+      {/* Floating Person Image 1 - Top Right Corner */}
       <motion.div
         initial={{ opacity: 0, x: 100, rotate: 8 }}
         animate={{ opacity: 1, x: 0, rotate: 3 }}
         transition={{ duration: 1.2, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-        className="absolute right-4 top-1/4 lg:right-16 lg:top-1/3 z-20 hidden md:block"
+        className="absolute right-2 top-20 sm:right-4 sm:top-24 md:right-8 md:top-32 lg:right-16 lg:top-40 z-0"
       >
         <motion.div
           animate={{
@@ -61,7 +61,7 @@ export function Hero() {
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="relative w-48 h-64 lg:w-64 lg:h-80 rounded-3xl overflow-hidden"
+          className="relative w-32 h-40 sm:w-40 sm:h-52 md:w-48 md:h-64 lg:w-64 lg:h-80 rounded-3xl overflow-hidden"
           style={{
             boxShadow:
               "0 25px 50px -12px rgba(255, 125, 0, 0.4), 0 0 0 1px rgba(255, 125, 0, 0.1)",
@@ -73,19 +73,19 @@ export function Hero() {
             alt=""
             fill
             className="object-cover"
-            sizes="(max-width: 768px) 192px, 256px"
+            sizes="(max-width: 640px) 128px, (max-width: 768px) 160px, (max-width: 1024px) 192px, 256px"
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0a0e1a]/60 via-transparent to-transparent z-10" />
         </motion.div>
       </motion.div>
 
-      {/* Floating Person Image 2 - Left Side */}
+      {/* Floating Person Image 2 - Bottom Left Corner */}
       <motion.div
         initial={{ opacity: 0, x: -100, rotate: -8 }}
         animate={{ opacity: 1, x: 0, rotate: -5 }}
         transition={{ duration: 1.2, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
-        className="absolute left-4 bottom-1/4 lg:left-16 lg:bottom-1/3 z-20 hidden md:block"
+        className="absolute left-2 bottom-20 sm:left-4 sm:bottom-24 md:left-8 md:bottom-32 lg:left-16 lg:bottom-40 z-0"
       >
         <motion.div
           animate={{
@@ -98,7 +98,7 @@ export function Hero() {
             ease: "easeInOut",
             delay: 1,
           }}
-          className="relative w-48 h-64 lg:w-56 lg:h-72 rounded-3xl overflow-hidden"
+          className="relative w-32 h-40 sm:w-40 sm:h-52 md:w-48 md:h-64 lg:w-56 lg:h-72 rounded-3xl overflow-hidden"
           style={{
             boxShadow:
               "0 25px 50px -12px rgba(255, 157, 51, 0.4), 0 0 0 1px rgba(255, 157, 51, 0.1)",
@@ -110,7 +110,7 @@ export function Hero() {
             alt=""
             fill
             className="object-cover"
-            sizes="(max-width: 768px) 192px, 224px"
+            sizes="(max-width: 640px) 128px, (max-width: 768px) 160px, (max-width: 1024px) 192px, 224px"
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-b from-[#0a0e1a]/60 via-transparent to-transparent z-10" />
