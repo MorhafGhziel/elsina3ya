@@ -59,21 +59,11 @@ export default function Home() {
 
       <main className="relative z-10">
         <Nav />
-        <div id="hero">
-          <Hero />
-        </div>
-        <div id="story">
-          <StorySection />
-        </div>
-        <div id="vision">
-          <VisionSection />
-        </div>
-        <div id="mission">
-          <MissionSection />
-        </div>
-        <div id="values">
-          <ValuesSection />
-        </div>
+        <Hero />
+        <StorySection />
+        <VisionSection />
+        <MissionSection />
+        <ValuesSection />
         <ContactSection />
         <Footer />
       </main>

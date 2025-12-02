@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
 
 const navLinks = [
   { name: "الرئيسية", href: "#hero", id: "hero" },
@@ -26,27 +25,96 @@ export function Nav() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    e.preventDefault();
+    const targetId = href.replace("#", "");
+    const element = document.getElementById(targetId);
+
+    if (element) {
+      const navHeight = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - navHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+
+    setIsMobileMenuOpen(false);
+  };
+
   useEffect(() => {
+    const updateActiveSection = () => {
+      const scrollPosition = window.scrollY + 150;
+
+      let currentSection = "hero";
+
+      for (let i = navLinks.length - 1; i >= 0; i--) {
+        const section = document.getElementById(navLinks[i].id);
+        if (section) {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
+
+          if (
+            scrollPosition >= sectionTop &&
+            scrollPosition < sectionTop + sectionHeight
+          ) {
+            currentSection = navLinks[i].id;
+            break;
+          }
+        }
+      }
+
+      setActiveSection(currentSection);
+    };
+
+    updateActiveSection();
+
+    const handleScroll = () => {
+      updateActiveSection();
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
     const observerOptions = {
       root: null,
-      rootMargin: "-20% 0px -70% 0px",
-      threshold: 0,
+      rootMargin: "-120px 0px -50% 0px",
+      threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1],
     };
 
     let timeoutId: NodeJS.Timeout;
 
     const observerCallback = (entries: IntersectionObserverEntry[]) => {
       clearTimeout(timeoutId);
-      
+
       const visibleEntries = entries.filter((entry) => entry.isIntersecting);
-      
+
       if (visibleEntries.length > 0) {
-        const mostVisible = visibleEntries.reduce((prev, current) =>
-          current.intersectionRatio > prev.intersectionRatio ? current : prev
-        );
-        
+        const mostVisible = visibleEntries.reduce((prev, current) => {
+          const prevRatio = prev.intersectionRatio;
+          const currentRatio = current.intersectionRatio;
+
+          const prevTop = prev.boundingClientRect.top;
+          const currentTop = current.boundingClientRect.top;
+
+          if (currentTop < 200 && currentTop > 0) {
+            return current;
+          }
+          if (prevTop < 200 && prevTop > 0) {
+            return prev;
+          }
+
+          return currentRatio > prevRatio ? current : prev;
+        });
+
         timeoutId = setTimeout(() => {
-          setActiveSection(mostVisible.target.id);
+          if (mostVisible.target.id) {
+            setActiveSection(mostVisible.target.id);
+          }
         }, 50);
       }
     };
@@ -65,6 +133,7 @@ export function Nav() {
 
     return () => {
       clearTimeout(timeoutId);
+      window.removeEventListener("scroll", handleScroll);
       navLinks.forEach((link) => {
         const element = document.getElementById(link.id);
         if (element) {
@@ -87,23 +156,28 @@ export function Nav() {
           >
             <div className="hidden lg:flex items-center gap-6">
               {navLinks.map((link) => (
-                <Link
+                <a
                   key={link.name}
                   href={link.href}
-                  className={`text-sm transition-colors duration-500 ease-in-out ${
+                  onClick={(e) => handleNavClick(e, link.href)}
+                  className={`text-sm transition-colors duration-500 ease-in-out cursor-pointer ${
                     activeSection === link.id
-                      ? "text-[#ff7d00]"
+                      ? "text-[#ff7d00] font-medium"
                       : "text-white/70 hover:text-white"
                   }`}
                 >
                   {link.name}
-                </Link>
+                </a>
               ))}
             </div>
 
-            <Link href="#hero" className="text-lg font-semibold text-white">
+            <a
+              href="#hero"
+              onClick={(e) => handleNavClick(e, "#hero")}
+              className="text-lg font-semibold text-white cursor-pointer"
+            >
               الصناعية
-            </Link>
+            </a>
 
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -138,18 +212,18 @@ export function Nav() {
 
           <div className="relative h-full flex flex-col items-center justify-center gap-6 px-6">
             {navLinks.map((link) => (
-              <Link
+              <a
                 key={link.name}
                 href={link.href}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={`text-xl transition-colors duration-500 ease-in-out ${
+                onClick={(e) => handleNavClick(e, link.href)}
+                className={`text-xl transition-colors duration-500 ease-in-out cursor-pointer ${
                   activeSection === link.id
                     ? "text-[#ff7d00] font-semibold"
                     : "text-white/80 hover:text-white font-medium"
                 }`}
               >
                 {link.name}
-              </Link>
+              </a>
             ))}
           </div>
         </div>

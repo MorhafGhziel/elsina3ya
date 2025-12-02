@@ -10,6 +10,7 @@ export function Hero() {
 
   return (
     <section
+      id="hero"
       ref={heroRef}
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
     >

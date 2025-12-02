@@ -102,51 +102,6 @@ function TwistedTorus() {
   );
 }
 
-function Rings() {
-  const ringsRef = useRef<THREE.Group>(null);
-
-  useFrame((state) => {
-    if (ringsRef.current) {
-      ringsRef.current.rotation.x = state.clock.getElapsedTime() * 0.08;
-      ringsRef.current.rotation.y = state.clock.getElapsedTime() * 0.12;
-      ringsRef.current.rotation.z = state.clock.getElapsedTime() * 0.05;
-    }
-  });
-
-  return (
-    <Float speed={0.8} rotationIntensity={0.15} floatIntensity={0.2}>
-      <group ref={ringsRef} position={[-3, 1, -3]}>
-        {[1.2, 1.8, 2.5].map((radius, i) => (
-          <mesh key={i} rotation={[Math.PI / 2.5, 0, Math.PI / 6 * i]}>
-            <torusGeometry args={[radius, 0.015, 32, 100]} />
-            <meshStandardMaterial
-              color="#ffffff"
-              wireframe
-              transparent
-              opacity={0.3 - i * 0.05}
-              emissive="#ff7d00"
-              emissiveIntensity={0.2}
-              side={THREE.DoubleSide}
-            />
-          </mesh>
-        ))}
-        <mesh rotation={[Math.PI / 2.5, 0, 0]}>
-          <ringGeometry args={[2.6, 2.8, 64]} />
-          <meshStandardMaterial
-            color="#ffffff"
-            wireframe
-            transparent
-            opacity={0.2}
-            emissive="#ff7d00"
-            emissiveIntensity={0.2}
-            side={THREE.DoubleSide}
-          />
-        </mesh>
-      </group>
-    </Float>
-  );
-}
-
 export function HeroCanvas() {
   return (
     <div className="absolute inset-0 opacity-40">
@@ -168,7 +123,6 @@ export function HeroCanvas() {
         <AnimatedSphere />
         <Particles />
         <TwistedTorus />
-        <Rings />
 
         <OrbitControls
           enableZoom={false}
