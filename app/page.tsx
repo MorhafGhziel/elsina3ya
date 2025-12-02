@@ -1,8 +1,8 @@
 import { Hero } from "./components/Hero";
-import { FeaturesGrid } from "./components/FeaturesGrid";
-import { WhyUsSection } from "./components/WhyUsSection";
-import { MediaFaces } from "./components/MediaFaces";
-// import { Testimonials } from "./components/ui/Testimonials";
+import { StorySection } from "./components/StorySection";
+import { VisionSection } from "./components/VisionSection";
+import { MissionSection } from "./components/MissionSection";
+import { ValuesSection } from "./components/ValuesSection";
 import { ContactSection } from "./components/ContactSection";
 import { Nav } from "./components/Nav";
 import { Footer } from "./components/Footer";
@@ -28,20 +28,20 @@ export default function Home() {
         />
 
         <div
-          className="absolute top-1/4 left-1/4 h-96 w-96 rounded-full opacity-20 blur-[120px]"
+          className="absolute top-1/4 left-1/4 h-96 w-96 rounded-full opacity-15 blur-[120px]"
           style={{
             background:
               "radial-gradient(circle, rgba(255, 125, 0, 0.3) 0%, transparent 70%)",
-            animation: "blob 15s infinite",
+            animation: "blob 18s infinite ease-in-out",
           }}
         />
         <div
-          className="absolute bottom-1/4 right-1/4 h-96 w-96 rounded-full opacity-15 blur-[120px]"
+          className="absolute bottom-1/4 right-1/4 h-96 w-96 rounded-full opacity-10 blur-[120px]"
           style={{
             background:
               "radial-gradient(circle, rgba(255, 157, 51, 0.2) 0%, transparent 70%)",
-            animation: "blob 20s infinite",
-            animationDelay: "5s",
+            animation: "blob 22s infinite ease-in-out",
+            animationDelay: "4s",
           }}
         />
 
@@ -62,18 +62,18 @@ export default function Home() {
         <div id="hero">
           <Hero />
         </div>
-        <div id="features">
-          <FeaturesGrid />
+        <div id="story">
+          <StorySection />
         </div>
-        <div id="why-us">
-          <WhyUsSection />
+        <div id="vision">
+          <VisionSection />
         </div>
-        <div id="faces">
-          <MediaFaces />
+        <div id="mission">
+          <MissionSection />
         </div>
-        {/* <div id="testimonials">
-          <Testimonials />
-        </div> */}
+        <div id="values">
+          <ValuesSection />
+        </div>
         <ContactSection />
         <Footer />
       </main>

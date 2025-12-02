@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { motion } from "framer-motion";
 import { HeroCanvas } from "./ui/HeroCanvas";
+import Image from "next/image";
 
 export function Hero() {
   const heroRef = useRef<HTMLElement>(null);
@@ -16,18 +17,18 @@ export function Hero() {
 
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div
-          className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full opacity-30 blur-3xl"
+          className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full opacity-25 blur-3xl"
           style={{
             background: "radial-gradient(circle, #ff7d00 0%, transparent 70%)",
-            animation: "blob 7s infinite",
+            animation: "blob 12s infinite ease-in-out",
           }}
         />
         <div
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full opacity-20 blur-3xl"
+          className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full opacity-15 blur-3xl"
           style={{
             background: "radial-gradient(circle, #ff9d33 0%, transparent 70%)",
-            animation: "blob 9s infinite",
-            animationDelay: "2s",
+            animation: "blob 15s infinite ease-in-out",
+            animationDelay: "3s",
           }}
         />
       </div>
@@ -42,6 +43,79 @@ export function Hero() {
           backgroundSize: "50px 50px",
         }}
       />
+
+      {/* Floating Person Image 1 - Right Side */}
+      <motion.div
+        initial={{ opacity: 0, x: 100, rotate: 8 }}
+        animate={{ opacity: 1, x: 0, rotate: 3 }}
+        transition={{ duration: 1.2, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+        className="absolute right-4 top-1/4 lg:right-16 lg:top-1/3 z-20 hidden md:block"
+      >
+        <motion.div
+          animate={{
+            y: [0, -20, 0],
+            rotate: [3, -2, 3],
+          }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="relative w-48 h-64 lg:w-64 lg:h-80 rounded-3xl overflow-hidden"
+          style={{
+            boxShadow:
+              "0 25px 50px -12px rgba(255, 125, 0, 0.4), 0 0 0 1px rgba(255, 125, 0, 0.1)",
+          }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-br from-[#ff7d00]/20 via-transparent to-[#ff9d33]/20 z-10" />
+          <Image
+            src="/images/person/person-1.jpg"
+            alt=""
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 192px, 256px"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0a0e1a]/60 via-transparent to-transparent z-10" />
+        </motion.div>
+      </motion.div>
+
+      {/* Floating Person Image 2 - Left Side */}
+      <motion.div
+        initial={{ opacity: 0, x: -100, rotate: -8 }}
+        animate={{ opacity: 1, x: 0, rotate: -5 }}
+        transition={{ duration: 1.2, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
+        className="absolute left-4 bottom-1/4 lg:left-16 lg:bottom-1/3 z-20 hidden md:block"
+      >
+        <motion.div
+          animate={{
+            y: [0, 20, 0],
+            rotate: [-5, 2, -5],
+          }}
+          transition={{
+            duration: 7,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1,
+          }}
+          className="relative w-48 h-64 lg:w-56 lg:h-72 rounded-3xl overflow-hidden"
+          style={{
+            boxShadow:
+              "0 25px 50px -12px rgba(255, 157, 51, 0.4), 0 0 0 1px rgba(255, 157, 51, 0.1)",
+          }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-br from-[#ff9d33]/20 via-transparent to-[#ff7d00]/20 z-10" />
+          <Image
+            src="/images/person/person-2.jpg"
+            alt=""
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 192px, 224px"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0a0e1a]/60 via-transparent to-transparent z-10" />
+        </motion.div>
+      </motion.div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
         <motion.div

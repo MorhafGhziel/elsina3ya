@@ -16,17 +16,17 @@ function AnimatedSphere() {
   });
 
   return (
-    <Float speed={2} rotationIntensity={0.5} floatIntensity={1}>
+    <Float speed={1.5} rotationIntensity={0.3} floatIntensity={0.3}>
       <Sphere ref={meshRef} args={[1, 100, 100]} scale={2.5}>
         <MeshDistortMaterial
           color="#ff7d00"
           attach="material"
-          distort={0.4}
-          speed={2}
+          distort={0.2}
+          speed={1.5}
           roughness={0.2}
           metalness={0.8}
           emissive="#ff7d00"
-          emissiveIntensity={0.3}
+          emissiveIntensity={0.2}
         />
       </Sphere>
     </Float>
@@ -85,16 +85,16 @@ function TwistedTorus() {
   });
 
   return (
-    <Float speed={1.5} rotationIntensity={0.3} floatIntensity={0.5}>
+    <Float speed={1} rotationIntensity={0.2} floatIntensity={0.2}>
       <mesh ref={torusRef} position={[3, -2, 1]} scale={0.8}>
         <torusKnotGeometry args={[1, 0.3, 128, 32]} />
         <meshStandardMaterial
           color="#ffffff"
           wireframe
           transparent
-          opacity={0.4}
+          opacity={0.3}
           emissive="#ff7d00"
-          emissiveIntensity={0.3}
+          emissiveIntensity={0.2}
           depthWrite={false}
         />
       </mesh>
@@ -114,7 +114,7 @@ function Rings() {
   });
 
   return (
-    <Float speed={1} rotationIntensity={0.2} floatIntensity={0.5}>
+    <Float speed={0.8} rotationIntensity={0.15} floatIntensity={0.2}>
       <group ref={ringsRef} position={[-3, 1, -3]}>
         {[1.2, 1.8, 2.5].map((radius, i) => (
           <mesh key={i} rotation={[Math.PI / 2.5, 0, Math.PI / 6 * i]}>

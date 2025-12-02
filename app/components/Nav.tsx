@@ -5,9 +5,10 @@ import Link from "next/link";
 
 const navLinks = [
   { name: "الرئيسية", href: "#hero", id: "hero" },
-  { name: "الخدمات", href: "#features", id: "features" },
-  { name: "لماذا نحن", href: "#why-us", id: "why-us" },
-  { name: "آراء العملاء", href: "#testimonials", id: "testimonials" },
+  { name: "قصتنا", href: "#story", id: "story" },
+  { name: "الرؤية", href: "#vision", id: "vision" },
+  { name: "رسالتنا", href: "#mission", id: "mission" },
+  { name: "القيم", href: "#values", id: "values" },
   { name: "تواصل معنا", href: "#contact", id: "contact" },
 ];
 

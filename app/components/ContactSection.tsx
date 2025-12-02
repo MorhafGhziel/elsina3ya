@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
+import Image from "next/image";
 
 export function ContactSection() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -76,6 +77,79 @@ export function ContactSection() {
             backgroundSize: "100px 100px",
           }}
         />
+
+        {/* Floating Person Image 1 - Far Right Background */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8, x: 100, rotate: 10 }}
+          whileInView={{ opacity: 1, scale: 1, x: 0, rotate: 6 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 1.2, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="absolute top-20 right-0 lg:right-8 xl:right-16 z-0 hidden lg:block pointer-events-none"
+        >
+          <motion.div
+            animate={{
+              y: [0, -15, 0],
+              rotate: [6, 3, 6],
+            }}
+            transition={{
+              duration: 6,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="relative w-48 h-64 lg:w-56 lg:h-72 rounded-[2rem] overflow-hidden"
+            style={{
+              boxShadow:
+                "0 30px 60px -15px rgba(255, 125, 0, 0.5), inset 0 0 0 2px rgba(255, 125, 0, 0.15)",
+            }}
+          >
+            <Image
+              src="/images/person/person-3.jpg"
+              alt=""
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 224px, 224px"
+            />
+            <div className="absolute inset-0 bg-gradient-to-br from-[#ff7d00]/15 via-transparent to-[#ff9d33]/15 z-10" />
+            <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-[#0a0e1a]/70 to-transparent z-10" />
+          </motion.div>
+        </motion.div>
+
+        {/* Floating Person Image 2 - Far Left Background */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8, x: -100, rotate: -10 }}
+          whileInView={{ opacity: 1, scale: 1, x: 0, rotate: -7 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 1.2, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          className="absolute bottom-20 left-0 lg:left-8 xl:left-16 z-0 hidden lg:block pointer-events-none"
+        >
+          <motion.div
+            animate={{
+              y: [0, 15, 0],
+              rotate: [-7, -4, -7],
+            }}
+            transition={{
+              duration: 7,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 0.5,
+            }}
+            className="relative w-48 h-64 lg:w-56 lg:h-72 rounded-[2rem] overflow-hidden"
+            style={{
+              boxShadow:
+                "0 30px 60px -15px rgba(255, 157, 51, 0.5), inset 0 0 0 2px rgba(255, 157, 51, 0.15)",
+            }}
+          >
+            <Image
+              src="/images/person/person-4.jpg"
+              alt=""
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 224px, 224px"
+            />
+            <div className="absolute inset-0 bg-gradient-to-tl from-[#ff9d33]/15 via-transparent to-[#ff7d00]/15 z-10" />
+            <div className="absolute top-0 left-0 right-0 h-1/3 bg-gradient-to-b from-[#0a0e1a]/70 to-transparent z-10" />
+          </motion.div>
+        </motion.div>
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto">
