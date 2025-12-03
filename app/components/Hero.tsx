@@ -160,17 +160,51 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.9 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
         >
-          <button className="group relative px-8 py-4 bg-[#ff7d00] text-[#0a0e1a] rounded-full font-bold text-lg overflow-hidden transition-all hover:scale-105 hover:shadow-2xl hover:shadow-[#ff7d00]/50">
+          <a
+            href="#story"
+            onClick={(e) => {
+              e.preventDefault();
+              const element = document.getElementById("story");
+              if (element) {
+                const navHeight = 80;
+                const elementPosition = element.getBoundingClientRect().top;
+                const offsetPosition =
+                  elementPosition + window.pageYOffset - navHeight;
+                window.scrollTo({
+                  top: offsetPosition,
+                  behavior: "smooth",
+                });
+              }
+            }}
+            className="group relative px-8 py-4 bg-[#ff7d00] text-[#0a0e1a] rounded-full font-bold text-lg overflow-hidden transition-all hover:scale-105 hover:shadow-2xl hover:shadow-[#ff7d00]/50 inline-block"
+          >
             <span className="relative z-10">ابدأ رحلتك الآن</span>
             <div className="absolute inset-0 bg-linear-to-r from-[#ff7d00] to-[#ff9d33] opacity-0 group-hover:opacity-100 transition-opacity" />
-          </button>
+          </a>
 
-          <button className="group px-8 py-4 glass border border-[#ff7d00]/30 text-white rounded-full font-bold text-lg transition-all hover:scale-105 hover:border-[#ff7d00] hover:bg-[#ff7d00]/10">
+          <a
+            href="#contact"
+            onClick={(e) => {
+              e.preventDefault();
+              const element = document.getElementById("contact");
+              if (element) {
+                const navHeight = 80;
+                const elementPosition = element.getBoundingClientRect().top;
+                const offsetPosition =
+                  elementPosition + window.pageYOffset - navHeight;
+                window.scrollTo({
+                  top: offsetPosition,
+                  behavior: "smooth",
+                });
+              }
+            }}
+            className="group px-8 py-4 glass border border-[#ff7d00]/30 text-white rounded-full font-bold text-lg transition-all hover:scale-105 hover:border-[#ff7d00] hover:bg-[#ff7d00]/10 inline-block"
+          >
             اكتشف خدماتنا
-            <span className="inline-block ml-2 transition-transform group-hover:translate-x-1">
+            <span className="inline-block mr-4 transition-transform group-hover:translate-x-1">
               ←
             </span>
-          </button>
+          </a>
         </motion.div>
 
         <motion.div
