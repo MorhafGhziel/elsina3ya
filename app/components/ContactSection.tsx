@@ -47,7 +47,8 @@ export function ContactSection() {
           }}
           className="absolute top-1/2 left-1/4 w-96 h-96 rounded-full blur-3xl"
           style={{
-            background: "radial-gradient(circle, rgba(255, 125, 0, 0.2) 0%, transparent 70%)",
+            background:
+              "radial-gradient(circle, rgba(255, 125, 0, 0.2) 0%, transparent 70%)",
           }}
         />
         <motion.div
@@ -63,7 +64,8 @@ export function ContactSection() {
           }}
           className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full blur-3xl"
           style={{
-            background: "radial-gradient(circle, rgba(255, 157, 51, 0.15) 0%, transparent 70%)",
+            background:
+              "radial-gradient(circle, rgba(255, 157, 51, 0.15) 0%, transparent 70%)",
           }}
         />
 
@@ -175,8 +177,8 @@ export function ContactSection() {
           </h2>
 
           <p className="text-xl text-[#8892a6] max-w-2xl mx-auto leading-relaxed">
-            انضم إلى مئات صُنّاع المحتوى والعلامات التجارية الذين اختاروا الصناعية
-            لتحقيق أهدافهم الرقمية
+            انضم إلى مئات صُنّاع المحتوى والعلامات التجارية الذين اختاروا
+            الصناعية لتحقيق أهدافهم الرقمية
           </p>
         </motion.div>
 
@@ -324,7 +326,9 @@ export function ContactSection() {
                     <span className="text-2xl">📧</span>
                   </div>
                   <div>
-                    <h4 className="text-white font-bold mb-1">البريد الإلكتروني</h4>
+                    <h4 className="text-white font-bold mb-1">
+                      البريد الإلكتروني
+                    </h4>
                     <a
                       href="mailto:Info@snaya.sa"
                       className="text-[#ff7d00] hover:text-[#ff9d33] transition-colors"
@@ -349,7 +353,7 @@ export function ContactSection() {
                       href="tel:0571077778"
                       className="text-[#ff7d00] hover:text-[#ff9d33] transition-colors"
                     >
-                      0571077778
+                      571077778 966+
                     </a>
                   </div>
                 </div>
