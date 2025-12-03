@@ -81,16 +81,16 @@ export function Hero() {
         </motion.div>
       </motion.div>
 
-      {/* Floating Person Image 2 - Bottom Left Corner */}
+      {/* Floating Person Image 2 - Top Left on Mobile, Bottom Left on Desktop */}
       <motion.div
         initial={{ opacity: 0, x: -100, rotate: -8 }}
         animate={{ opacity: 1, x: 0, rotate: -5 }}
         transition={{ duration: 1.2, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
-        className="absolute left-2 bottom-20 sm:left-4 sm:bottom-24 md:left-8 md:bottom-32 lg:left-16 lg:bottom-40 z-0"
+        className="absolute left-2 top-20 sm:left-4 sm:top-24 md:left-8 md:bottom-32 md:top-auto lg:left-16 lg:bottom-40 z-0"
       >
         <motion.div
           animate={{
-            y: [0, 20, 0],
+            y: [0, -20, 0],
             rotate: [-5, 2, -5],
           }}
           transition={{
@@ -114,7 +114,7 @@ export function Hero() {
             sizes="(max-width: 640px) 128px, (max-width: 768px) 160px, (max-width: 1024px) 192px, 224px"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0a0e1a]/60 via-transparent to-transparent z-10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0a0e1a]/60 via-transparent to-transparent z-10" />
         </motion.div>
       </motion.div>
 
