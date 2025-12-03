@@ -171,14 +171,6 @@ export function Nav() {
               ))}
             </div>
 
-            <a
-              href="#hero"
-              onClick={(e) => handleNavClick(e, "#hero")}
-              className="text-lg font-semibold text-white cursor-pointer"
-            >
-              الصناعية
-            </a>
-
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="lg:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5"
@@ -199,6 +191,14 @@ export function Nav() {
                 }`}
               />
             </button>
+
+            <a
+              href="#hero"
+              onClick={(e) => handleNavClick(e, "#hero")}
+              className="text-lg font-semibold text-white cursor-pointer"
+            >
+              الصناعية
+            </a>
           </div>
         </div>
       </nav>
