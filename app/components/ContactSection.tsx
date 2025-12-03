@@ -279,8 +279,8 @@ export function ContactSection() {
               >
                 <span className="relative z-10 flex items-center justify-center gap-2">
                   إرسال الرسالة
-                  <span className="group-hover:translate-x-1 transition-transform">
-                    →
+                  <span className="group-hover:-translate-x-1 transition-transform">
+                    ←
                   </span>
                 </span>
                 <motion.div
