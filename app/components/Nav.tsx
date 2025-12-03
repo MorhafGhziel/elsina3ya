@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
   { name: "الرئيسية", href: "#hero", id: "hero" },
@@ -203,31 +204,58 @@ export function Nav() {
         </div>
       </nav>
 
-      {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-40 lg:hidden">
-          <div
-            className="absolute inset-0 bg-[#0a0e1a]/95"
-            onClick={() => setIsMobileMenuOpen(false)}
-          />
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-40 lg:hidden"
+          >
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="absolute inset-0 bg-[#0a0e1a]/95 backdrop-blur-sm"
+              onClick={() => setIsMobileMenuOpen(false)}
+            />
 
-          <div className="relative h-full flex flex-col items-center justify-center gap-6 px-6">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
-                className={`text-xl transition-colors duration-500 ease-in-out cursor-pointer ${
-                  activeSection === link.id
-                    ? "text-[#ff7d00] font-semibold"
-                    : "text-white/80 hover:text-white font-medium"
-                }`}
-              >
-                {link.name}
-              </a>
-            ))}
-          </div>
-        </div>
-      )}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
+              transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+              className="relative h-full flex flex-col items-center justify-center gap-6 px-6"
+            >
+              {navLinks.map((link, index) => (
+                <motion.a
+                  key={link.name}
+                  href={link.href}
+                  onClick={(e) => handleNavClick(e, link.href)}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  transition={{
+                    duration: 0.4,
+                    delay: index * 0.1,
+                    ease: [0.22, 1, 0.36, 1],
+                  }}
+                  whileHover={{ scale: 1.05, x: 10 }}
+                  className={`text-xl transition-colors duration-500 ease-in-out cursor-pointer ${
+                    activeSection === link.id
+                      ? "text-[#ff7d00] font-semibold"
+                      : "text-white/80 hover:text-white font-medium"
+                  }`}
+                >
+                  {link.name}
+                </motion.a>
+              ))}
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }
