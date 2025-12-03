@@ -1,14 +1,14 @@
-import { Resend } from 'resend';
-import { NextRequest, NextResponse } from 'next/server';
+import { Resend } from "resend";
+import { NextRequest, NextResponse } from "next/server";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: NextRequest) {
   try {
     if (!process.env.RESEND_API_KEY) {
-      console.error('RESEND_API_KEY is not set');
+      console.error("RESEND_API_KEY is not set");
       return NextResponse.json(
-        { error: 'خطأ في إعدادات الخادم. الرجاء التواصل مع الدعم الفني.' },
+        { error: "خطأ في إعدادات الخادم. الرجاء التواصل مع الدعم الفني." },
         { status: 500 }
       );
     }
@@ -18,7 +18,7 @@ export async function POST(request: NextRequest) {
 
     if (!name || !email || !message) {
       return NextResponse.json(
-        { error: 'الرجاء ملء جميع الحقول المطلوبة' },
+        { error: "الرجاء ملء جميع الحقول المطلوبة" },
         { status: 400 }
       );
     }
@@ -32,10 +32,14 @@ export async function POST(request: NextRequest) {
         <div style="margin-top: 30px; line-height: 1.8;">
           <p><strong style="color: #ff7d00;">الاسم:</strong> ${name}</p>
           <p><strong style="color: #ff7d00;">البريد الإلكتروني:</strong> ${email}</p>
-          ${phone ? `<p><strong style="color: #ff7d00;">رقم الهاتف:</strong> ${phone}</p>` : ''}
+          ${
+            phone
+              ? `<p><strong style="color: #ff7d00;">رقم الهاتف:</strong> ${phone}</p>`
+              : ""
+          }
           <p><strong style="color: #ff7d00;">الرسالة:</strong></p>
           <p style="background-color: #001524; padding: 15px; border-radius: 8px; border-right: 3px solid #ff7d00;">
-            ${message.replace(/\n/g, '<br>')}
+            ${message.replace(/\n/g, "<br>")}
           </p>
         </div>
         
@@ -50,7 +54,7 @@ export async function POST(request: NextRequest) {
 
 الاسم: ${name}
 البريد الإلكتروني: ${email}
-${phone ? `رقم الهاتف: ${phone}` : ''}
+${phone ? `رقم الهاتف: ${phone}` : ""}
 
 الرسالة:
 ${message}
@@ -60,9 +64,8 @@ ${message}
     `;
 
     const { data, error } = await resend.emails.send({
-      // Using your verified domain snaya.sa
-      from: process.env.RESEND_FROM_EMAIL || 'الصناعية <noreply@snaya.sa>',
-      to: ['Info@snaya.sa'],
+      from: process.env.RESEND_FROM_EMAIL || "الصناعية <noreply@snaya.sa>",
+      to: ["Info@snaya.sa"],
       subject: `رسالة جديدة من ${name} - موقع الصناعية`,
       html: emailHtml,
       text: emailText,
@@ -70,39 +73,47 @@ ${message}
     });
 
     if (error) {
-      console.error('Resend API error:', error);
+      console.error("Resend API error:", error);
       return NextResponse.json(
-        { 
-          error: error.message || 'حدث خطأ أثناء إرسال الرسالة. الرجاء المحاولة مرة أخرى لاحقاً.' 
+        {
+          error:
+            error.message ||
+            "حدث خطأ أثناء إرسال الرسالة. الرجاء المحاولة مرة أخرى لاحقاً.",
         },
         { status: 500 }
       );
     }
 
-    console.log('Email sent successfully. ID:', data?.id);
+    console.log("Email sent successfully. ID:", data?.id);
 
     return NextResponse.json(
-      { 
-        success: true, 
-        message: 'تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.',
-        id: data?.id 
+      {
+        success: true,
+        message: "تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.",
+        id: data?.id,
       },
       { status: 200 }
     );
-  } catch (error: any) {
-    console.error('Error sending email:', error);
-    console.error('Error details:', JSON.stringify(error, null, 2));
-    
+  } catch (error) {
+    console.error("Error sending email:", error);
+
     // Return more detailed error message
-    const errorMessage = error?.message || 'حدث خطأ أثناء إرسال الرسالة. الرجاء المحاولة مرة أخرى لاحقاً.';
-    
+    const errorMessage =
+      error instanceof Error
+        ? error.message
+        : "حدث خطأ أثناء إرسال الرسالة. الرجاء المحاولة مرة أخرى لاحقاً.";
+
+    const errorStack =
+      error instanceof Error && process.env.NODE_ENV === "development"
+        ? error.stack
+        : undefined;
+
     return NextResponse.json(
-      { 
+      {
         error: errorMessage,
-        details: process.env.NODE_ENV === 'development' ? error?.stack : undefined
+        details: errorStack,
       },
       { status: 500 }
     );
   }
 }
-

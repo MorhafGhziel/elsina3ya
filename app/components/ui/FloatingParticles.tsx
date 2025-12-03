@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 
 export function FloatingParticles() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const animationFrameRef = useRef<number>();
+  const animationFrameRef = useRef<number | undefined>(undefined);
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
