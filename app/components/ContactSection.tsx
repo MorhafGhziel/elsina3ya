@@ -13,10 +13,58 @@ export function ContactSection() {
     phone: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: "success" | "error" | null;
+    message: string;
+  }>({ type: null, message: "" });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: "" });
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubmitStatus({
+          type: "success",
+          message: data.message || "تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.",
+        });
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          message: "",
+        });
+      } else {
+        console.error("API Error:", data);
+        setSubmitStatus({
+          type: "error",
+          message:
+            data.error ||
+            "حدث خطأ أثناء إرسال الرسالة. الرجاء المحاولة مرة أخرى.",
+        });
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      setSubmitStatus({
+        type: "error",
+        message:
+          "حدث خطأ أثناء إرسال الرسالة. الرجاء المحاولة مرة أخرى لاحقاً.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (
@@ -273,28 +321,45 @@ export function ContactSection() {
                 />
               </div>
 
+              {submitStatus.type && (
+                <div
+                  className={`p-4 rounded-xl ${
+                    submitStatus.type === "success"
+                      ? "bg-green-500/20 border border-green-500/50 text-green-400"
+                      : "bg-red-500/20 border border-red-500/50 text-red-400"
+                  }`}
+                >
+                  <p className="text-sm text-right">{submitStatus.message}</p>
+                </div>
+              )}
+
               <button
                 type="submit"
-                className="w-full group relative px-10 py-5 bg-gradient-to-r from-[#ff7d00] to-[#ff9d33] text-[#0a0e1a] rounded-full font-bold text-lg overflow-hidden transition-all hover:scale-105 hover:shadow-2xl hover:shadow-[#ff7d00]/50"
+                disabled={isSubmitting}
+                className="w-full group relative px-10 py-5 bg-gradient-to-r from-[#ff7d00] to-[#ff9d33] text-[#0a0e1a] rounded-full font-bold text-lg overflow-hidden transition-all hover:scale-105 hover:shadow-2xl hover:shadow-[#ff7d00]/50 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
               >
                 <span className="relative z-10 flex items-center justify-center gap-2">
-                  إرسال الرسالة
-                  <span className="group-hover:-translate-x-1 transition-transform">
-                    ←
-                  </span>
+                  {isSubmitting ? "جاري الإرسال..." : "إرسال الرسالة"}
+                  {!isSubmitting && (
+                    <span className="group-hover:-translate-x-1 transition-transform">
+                      ←
+                    </span>
+                  )}
                 </span>
-                <motion.div
-                  animate={{
-                    x: ["0%", "100%"],
-                  }}
-                  transition={{
-                    duration: 1.5,
-                    repeat: Infinity,
-                    ease: "linear",
-                  }}
-                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
-                  style={{ transform: "skewX(-20deg)" }}
-                />
+                {!isSubmitting && (
+                  <motion.div
+                    animate={{
+                      x: ["0%", "100%"],
+                    }}
+                    transition={{
+                      duration: 1.5,
+                      repeat: Infinity,
+                      ease: "linear",
+                    }}
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
+                    style={{ transform: "skewX(-20deg)" }}
+                  />
+                )}
               </button>
             </form>
           </motion.div>
