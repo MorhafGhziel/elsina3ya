@@ -326,10 +326,10 @@ export function ContactSection() {
                   <div>
                     <h4 className="text-white font-bold mb-1">البريد الإلكتروني</h4>
                     <a
-                      href="mailto:info@alsinaiya.com"
+                      href="mailto:Info@snaya.sa"
                       className="text-[#ff7d00] hover:text-[#ff9d33] transition-colors"
                     >
-                      info@alsinaiya.com
+                      Info@snaya.sa
                     </a>
                   </div>
                 </div>
@@ -346,10 +346,10 @@ export function ContactSection() {
                   <div>
                     <h4 className="text-white font-bold mb-1">رقم الهاتف</h4>
                     <a
-                      href="tel:+966500000000"
+                      href="tel:0571077778"
                       className="text-[#ff7d00] hover:text-[#ff9d33] transition-colors"
                     >
-                      +966 50 000 0000
+                      0571077778
                     </a>
                   </div>
                 </div>
