@@ -1,13 +1,7 @@
 "use client";
 
-import { useRef, useEffect } from "react";
-import { motion, useInView, useScroll, useTransform } from "framer-motion";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
 const reasons = [
   {
@@ -35,68 +29,13 @@ const reasons = [
 export function WhyUsSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"],
-  });
-
-  const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
-  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
-
-  useEffect(() => {
-    if (!sectionRef.current) return;
-
-    const cards = sectionRef.current.querySelectorAll(".why-card");
-
-    cards.forEach((card, index) => {
-      gsap.fromTo(
-        card,
-        {
-          y: 100,
-          opacity: 0,
-          scale: 0.8,
-        },
-        {
-          y: 0,
-          opacity: 1,
-          scale: 1,
-          duration: 0.8,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: card,
-            start: "top bottom-=100",
-            toggleActions: "play none none reverse",
-          },
-        }
-      );
-    });
-  }, []);
 
   return (
     <section
       ref={sectionRef}
       className="relative py-32 px-6 lg:px-8 overflow-hidden"
     >
-      <motion.div
-        style={{ y, opacity }}
-        className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full opacity-20 blur-3xl pointer-events-none"
-        animate={{
-          scale: [1, 1.2, 1],
-          rotate: [0, 180, 360],
-        }}
-        transition={{
-          duration: 20,
-          repeat: Infinity,
-          ease: "linear",
-        }}
-      >
-        <div
-          className="w-full h-full"
-          style={{
-            background: "radial-gradient(circle, #ff7d00 0%, transparent 70%)",
-          }}
-        />
-      </motion.div>
+      <div className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full opacity-15 blur-3xl pointer-events-none bg-gradient-to-br from-[#ff7d00]/20 to-transparent" />
 
       <div className="relative z-10 max-w-7xl mx-auto">
         <motion.div
@@ -125,7 +64,13 @@ export function WhyUsSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {reasons.map((reason, index) => (
-            <div key={index} className="why-card group">
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="group"
+            >
               <div className="relative h-full glass p-8 md:p-10 rounded-3xl border border-[#ff7d00]/20 hover:border-[#ff7d00] transition-all duration-500 overflow-hidden">
                 <div className="absolute top-0 right-0 text-[150px] font-black text-[#ff7d00]/5 leading-none group-hover:text-[#ff7d00]/10 transition-colors">
                   {reason.number}
@@ -150,7 +95,7 @@ export function WhyUsSection() {
 
                 <div className="absolute inset-0 bg-gradient-to-br from-[#ff7d00]/0 via-[#ff7d00]/5 to-[#ff7d00]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 

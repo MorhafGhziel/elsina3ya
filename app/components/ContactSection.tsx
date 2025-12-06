@@ -82,125 +82,69 @@ export function ContactSection() {
       id="contact"
       className="relative py-32 px-6 lg:px-8 overflow-hidden"
     >
-      <div className="absolute inset-0 overflow-hidden">
-        <motion.div
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.5, 0.3],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="absolute top-1/2 left-1/4 w-96 h-96 rounded-full blur-3xl"
-          style={{
-            background:
-              "radial-gradient(circle, rgba(255, 125, 0, 0.2) 0%, transparent 70%)",
-          }}
-        />
-        <motion.div
-          animate={{
-            scale: [1, 1.3, 1],
-            opacity: [0.2, 0.4, 0.2],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 1,
-          }}
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full blur-3xl"
-          style={{
-            background:
-              "radial-gradient(circle, rgba(255, 157, 51, 0.15) 0%, transparent 70%)",
-          }}
-        />
-
-        <div
-          className="absolute inset-0 opacity-5"
-          style={{
-            backgroundImage: `
-              linear-gradient(rgba(255, 125, 0, 0.3) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(255, 125, 0, 0.3) 1px, transparent 1px)
-            `,
-            backgroundSize: "100px 100px",
-          }}
-        />
-
-        {/* Floating Person Image 1 - Far Right Background */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8, x: 100, rotate: 10 }}
-          whileInView={{ opacity: 1, scale: 1, x: 0, rotate: 6 }}
-          viewport={{ once: true, amount: 0.1 }}
-          transition={{ duration: 1.2, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="absolute top-20 right-0 sm:right-2 md:right-4 lg:right-8 xl:right-16 z-0 pointer-events-none"
-        >
-          <motion.div
-            animate={{
-              y: [0, -15, 0],
-              rotate: [6, 3, 6],
-            }}
-            transition={{
-              duration: 6,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-            className="relative w-32 h-40 sm:w-40 sm:h-52 md:w-48 md:h-64 lg:w-56 lg:h-72 rounded-[2rem] overflow-hidden"
-            style={{
-              boxShadow:
-                "0 30px 60px -15px rgba(255, 125, 0, 0.5), inset 0 0 0 2px rgba(255, 125, 0, 0.15)",
-            }}
-          >
-            <Image
-              src="/images/person/person-3.jpg"
-              alt=""
-              fill
-              className="object-cover"
-              sizes="(max-width: 640px) 128px, (max-width: 768px) 160px, (max-width: 1024px) 192px, 224px"
-            />
-            <div className="absolute inset-0 bg-gradient-to-br from-[#ff7d00]/15 via-transparent to-[#ff9d33]/15 z-10" />
-            <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-[#0a0e1a]/70 to-transparent z-10" />
-          </motion.div>
-        </motion.div>
-
-        {/* Floating Person Image 2 - Far Left Background */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8, x: -100, rotate: -10 }}
-          whileInView={{ opacity: 1, scale: 1, x: 0, rotate: -7 }}
-          viewport={{ once: true, amount: 0.1 }}
-          transition={{ duration: 1.2, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="absolute bottom-20 left-0 sm:left-2 md:left-4 lg:left-8 xl:left-16 z-0 pointer-events-none"
-        >
-          <motion.div
-            animate={{
-              y: [0, 15, 0],
-              rotate: [-7, -4, -7],
-            }}
-            transition={{
-              duration: 7,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 0.5,
-            }}
-            className="relative w-32 h-40 sm:w-40 sm:h-52 md:w-48 md:h-64 lg:w-56 lg:h-72 rounded-[2rem] overflow-hidden"
-            style={{
-              boxShadow:
-                "0 30px 60px -15px rgba(255, 157, 51, 0.5), inset 0 0 0 2px rgba(255, 157, 51, 0.15)",
-            }}
-          >
-            <Image
-              src="/images/person/person-4.jpg"
-              alt=""
-              fill
-              className="object-cover"
-              sizes="(max-width: 640px) 128px, (max-width: 768px) 160px, (max-width: 1024px) 192px, 224px"
-            />
-            <div className="absolute inset-0 bg-gradient-to-tl from-[#ff9d33]/15 via-transparent to-[#ff7d00]/15 z-10" />
-            <div className="absolute top-0 left-0 right-0 h-1/3 bg-gradient-to-b from-[#0a0e1a]/70 to-transparent z-10" />
-          </motion.div>
-        </motion.div>
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/2 left-1/4 w-96 h-96 rounded-full opacity-15 blur-3xl bg-gradient-to-br from-[#ff7d00]/20 to-transparent" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full opacity-10 blur-3xl bg-gradient-to-br from-[#ff9d33]/15 to-transparent" />
       </div>
+
+      {/* Person Image 3 - Far Right */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.8, delay: 0.3 }}
+        className="absolute top-20 right-0 sm:right-4 md:right-8 lg:right-16 z-0 pointer-events-none"
+      >
+        <motion.div
+          animate={{ y: [0, -10, 0] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+          className="relative w-32 h-40 sm:w-40 sm:h-52 md:w-48 md:h-64 lg:w-56 lg:h-72 rounded-3xl overflow-hidden"
+          style={{
+            boxShadow: "0 20px 40px -12px rgba(255, 125, 0, 0.3)",
+          }}
+        >
+          <Image
+            src="/images/person/person-3.jpg"
+            alt=""
+            fill
+            className="object-cover"
+            sizes="(max-width: 640px) 128px, (max-width: 768px) 160px, (max-width: 1024px) 192px, 224px"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0a0e1a]/50 to-transparent" />
+        </motion.div>
+      </motion.div>
+
+      {/* Person Image 4 - Far Left */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.8, delay: 0.5 }}
+        className="absolute bottom-20 left-0 sm:left-4 md:left-8 lg:left-16 z-0 pointer-events-none"
+      >
+        <motion.div
+          animate={{ y: [0, 10, 0] }}
+          transition={{
+            duration: 7,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 0.5,
+          }}
+          className="relative w-32 h-40 sm:w-40 sm:h-52 md:w-48 md:h-64 lg:w-56 lg:h-72 rounded-3xl overflow-hidden"
+          style={{
+            boxShadow: "0 20px 40px -12px rgba(255, 157, 51, 0.3)",
+          }}
+        >
+          <Image
+            src="/images/person/person-4.jpg"
+            alt=""
+            fill
+            className="object-cover"
+            sizes="(max-width: 640px) 128px, (max-width: 768px) 160px, (max-width: 1024px) 192px, 224px"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0a0e1a]/50 to-transparent" />
+        </motion.div>
+      </motion.div>
 
       <div className="relative z-10 max-w-6xl mx-auto">
         <motion.div
@@ -336,30 +280,9 @@ export function ContactSection() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full group relative px-10 py-5 bg-gradient-to-r from-[#ff7d00] to-[#ff9d33] text-[#0a0e1a] rounded-full font-bold text-lg overflow-hidden transition-all hover:scale-105 hover:shadow-2xl hover:shadow-[#ff7d00]/50 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                className="w-full px-10 py-5 bg-gradient-to-r from-[#ff7d00] to-[#ff9d33] text-[#0a0e1a] rounded-full font-bold text-lg transition-all hover:scale-105 hover:shadow-xl hover:shadow-[#ff7d00]/50 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
               >
-                <span className="relative z-10 flex items-center justify-center gap-2">
-                  {isSubmitting ? "جاري الإرسال..." : "إرسال الرسالة"}
-                  {!isSubmitting && (
-                    <span className="group-hover:-translate-x-1 transition-transform">
-                      ←
-                    </span>
-                  )}
-                </span>
-                {!isSubmitting && (
-                  <motion.div
-                    animate={{
-                      x: ["0%", "100%"],
-                    }}
-                    transition={{
-                      duration: 1.5,
-                      repeat: Infinity,
-                      ease: "linear",
-                    }}
-                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
-                    style={{ transform: "skewX(-20deg)" }}
-                  />
-                )}
+                {isSubmitting ? "جاري الإرسال..." : "إرسال الرسالة"}
               </button>
             </form>
           </motion.div>

@@ -50,20 +50,14 @@ export function Nav() {
 
   useEffect(() => {
     const updateActiveSection = () => {
-      const scrollPosition = window.scrollY + 150;
-
+      const scrollPosition = window.scrollY + 200;
       let currentSection = "hero";
 
       for (let i = navLinks.length - 1; i >= 0; i--) {
         const section = document.getElementById(navLinks[i].id);
         if (section) {
           const sectionTop = section.offsetTop;
-          const sectionHeight = section.offsetHeight;
-
-          if (
-            scrollPosition >= sectionTop &&
-            scrollPosition < sectionTop + sectionHeight
-          ) {
+          if (scrollPosition >= sectionTop) {
             currentSection = navLinks[i].id;
             break;
           }
@@ -74,73 +68,10 @@ export function Nav() {
     };
 
     updateActiveSection();
-
-    const handleScroll = () => {
-      updateActiveSection();
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-
-    const observerOptions = {
-      root: null,
-      rootMargin: "-120px 0px -50% 0px",
-      threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1],
-    };
-
-    let timeoutId: NodeJS.Timeout;
-
-    const observerCallback = (entries: IntersectionObserverEntry[]) => {
-      clearTimeout(timeoutId);
-
-      const visibleEntries = entries.filter((entry) => entry.isIntersecting);
-
-      if (visibleEntries.length > 0) {
-        const mostVisible = visibleEntries.reduce((prev, current) => {
-          const prevRatio = prev.intersectionRatio;
-          const currentRatio = current.intersectionRatio;
-
-          const prevTop = prev.boundingClientRect.top;
-          const currentTop = current.boundingClientRect.top;
-
-          if (currentTop < 200 && currentTop > 0) {
-            return current;
-          }
-          if (prevTop < 200 && prevTop > 0) {
-            return prev;
-          }
-
-          return currentRatio > prevRatio ? current : prev;
-        });
-
-        timeoutId = setTimeout(() => {
-          if (mostVisible.target.id) {
-            setActiveSection(mostVisible.target.id);
-          }
-        }, 50);
-      }
-    };
-
-    const observer = new IntersectionObserver(
-      observerCallback,
-      observerOptions
-    );
-
-    navLinks.forEach((link) => {
-      const element = document.getElementById(link.id);
-      if (element) {
-        observer.observe(element);
-      }
-    });
+    window.addEventListener("scroll", updateActiveSection, { passive: true });
 
     return () => {
-      clearTimeout(timeoutId);
-      window.removeEventListener("scroll", handleScroll);
-      navLinks.forEach((link) => {
-        const element = document.getElementById(link.id);
-        if (element) {
-          observer.unobserve(element);
-        }
-      });
+      window.removeEventListener("scroll", updateActiveSection);
     };
   }, []);
 

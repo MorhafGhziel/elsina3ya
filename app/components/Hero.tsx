@@ -1,98 +1,69 @@
 "use client";
 
-import { useRef } from "react";
 import { motion } from "framer-motion";
-import { HeroCanvas } from "./ui/HeroCanvas";
 import Image from "next/image";
 
-export function Hero() {
-  const heroRef = useRef<HTMLElement>(null);
+const smoothScroll = (id: string) => {
+  const element = document.getElementById(id);
+  if (element) {
+    const navHeight = 80;
+    const elementPosition = element.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - navHeight;
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    });
+  }
+};
 
+export function Hero() {
   return (
     <section
       id="hero"
-      ref={heroRef}
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
     >
-      <HeroCanvas />
-
+      {/* Simplified Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div
-          className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full opacity-25 blur-3xl"
-          style={{
-            background: "radial-gradient(circle, #ff7d00 0%, transparent 70%)",
-            animation: "blob 12s infinite ease-in-out",
-          }}
-        />
-        <div
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full opacity-15 blur-3xl"
-          style={{
-            background: "radial-gradient(circle, #ff9d33 0%, transparent 70%)",
-            animation: "blob 15s infinite ease-in-out",
-            animationDelay: "3s",
-          }}
-        />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full opacity-20 blur-3xl bg-gradient-to-br from-[#ff7d00]/30 to-transparent" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full opacity-10 blur-3xl bg-gradient-to-br from-[#ff9d33]/20 to-transparent" />
       </div>
 
-      <div
-        className="absolute inset-0 opacity-10"
-        style={{
-          backgroundImage: `
-            linear-gradient(rgba(255, 125, 0, 0.1) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255, 125, 0, 0.1) 1px, transparent 1px)
-          `,
-          backgroundSize: "50px 50px",
-        }}
-      />
-
-      {/* Floating Person Image 1 - Top Right Corner */}
+      {/* Person Image 1 - Top Right */}
       <motion.div
-        initial={{ opacity: 0, x: 100, rotate: 8 }}
-        animate={{ opacity: 1, x: 0, rotate: 3 }}
-        transition={{ duration: 1.2, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-        className="absolute right-2 top-20 sm:right-4 sm:top-24 md:right-8 md:top-32 lg:right-16 lg:top-40 z-0"
+        initial={{ opacity: 0, x: 50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1, delay: 0.5 }}
+        className="absolute right-4 top-24 md:right-8 md:top-32 lg:right-16 lg:top-40 z-0 pointer-events-none"
       >
         <motion.div
-          animate={{
-            y: [0, -20, 0],
-            rotate: [3, -2, 3],
-          }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="relative w-32 h-40 sm:w-40 sm:h-52 md:w-48 md:h-64 lg:w-64 lg:h-80 rounded-3xl overflow-hidden"
+          animate={{ y: [0, -15, 0] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+          className="relative w-32 h-40 sm:w-40 sm:h-52 md:w-48 md:h-64 lg:w-56 lg:h-72 rounded-3xl overflow-hidden"
           style={{
-            boxShadow:
-              "0 25px 50px -12px rgba(255, 125, 0, 0.4), 0 0 0 1px rgba(255, 125, 0, 0.1)",
+            boxShadow: "0 20px 40px -12px rgba(255, 125, 0, 0.3)",
           }}
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-[#ff7d00]/20 via-transparent to-[#ff9d33]/20 z-10" />
           <Image
             src="/images/person/person-1.jpg"
             alt=""
             fill
             className="object-cover"
-            sizes="(max-width: 640px) 128px, (max-width: 768px) 160px, (max-width: 1024px) 192px, 256px"
+            sizes="(max-width: 640px) 128px, (max-width: 768px) 160px, (max-width: 1024px) 192px, 224px"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0a0e1a]/60 via-transparent to-transparent z-10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0a0e1a]/50 to-transparent" />
         </motion.div>
       </motion.div>
 
-      {/* Floating Person Image 2 - Top Left on Mobile, Bottom Left on Desktop */}
+      {/* Person Image 2 - Bottom Left */}
       <motion.div
-        initial={{ opacity: 0, x: -100, rotate: -8 }}
-        animate={{ opacity: 1, x: 0, rotate: -5 }}
-        transition={{ duration: 1.2, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
-        className="absolute left-2 top-20 sm:left-4 sm:top-24 md:left-8 md:bottom-32 md:top-auto lg:left-16 lg:bottom-40 z-0"
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1, delay: 0.7 }}
+        className="absolute left-4 top-24 sm:left-8 md:bottom-32 md:top-auto lg:left-16 lg:bottom-40 z-0 pointer-events-none"
       >
         <motion.div
-          animate={{
-            y: [0, -20, 0],
-            rotate: [-5, 2, -5],
-          }}
+          animate={{ y: [0, -15, 0] }}
           transition={{
             duration: 7,
             repeat: Infinity,
@@ -101,11 +72,9 @@ export function Hero() {
           }}
           className="relative w-32 h-40 sm:w-40 sm:h-52 md:w-48 md:h-64 lg:w-56 lg:h-72 rounded-3xl overflow-hidden"
           style={{
-            boxShadow:
-              "0 25px 50px -12px rgba(255, 157, 51, 0.4), 0 0 0 1px rgba(255, 157, 51, 0.1)",
+            boxShadow: "0 20px 40px -12px rgba(255, 157, 51, 0.3)",
           }}
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-[#ff9d33]/20 via-transparent to-[#ff7d00]/20 z-10" />
           <Image
             src="/images/person/person-2.jpg"
             alt=""
@@ -114,7 +83,7 @@ export function Hero() {
             sizes="(max-width: 640px) 128px, (max-width: 768px) 160px, (max-width: 1024px) 192px, 224px"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0a0e1a]/60 via-transparent to-transparent z-10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0a0e1a]/50 to-transparent" />
         </motion.div>
       </motion.div>
 
@@ -135,10 +104,10 @@ export function Hero() {
         </motion.div>
 
         <motion.h1
-          initial={{ opacity: 0, y: 50, filter: "blur(10px)" }}
-          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          transition={{ duration: 1, delay: 0.3 }}
-          className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-black mb-6 leading-tight pb-2 overflow-visible"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-black mb-6 leading-tight"
         >
           <span className="block gradient-text mb-2">نرتب ظهورك</span>
           <span className="block gradient-text-orange">ونضمن تأثيرك</span>
@@ -164,71 +133,23 @@ export function Hero() {
             href="#story"
             onClick={(e) => {
               e.preventDefault();
-              const element = document.getElementById("story");
-              if (element) {
-                const navHeight = 80;
-                const elementPosition = element.getBoundingClientRect().top;
-                const offsetPosition =
-                  elementPosition + window.pageYOffset - navHeight;
-                window.scrollTo({
-                  top: offsetPosition,
-                  behavior: "smooth",
-                });
-              }
+              smoothScroll("story");
             }}
-            className="group relative px-8 py-4 bg-[#ff7d00] text-[#0a0e1a] rounded-full font-bold text-lg overflow-hidden transition-all hover:scale-105 hover:shadow-2xl hover:shadow-[#ff7d00]/50 inline-block"
+            className="px-8 py-4 bg-[#ff7d00] text-[#0a0e1a] rounded-full font-bold text-lg transition-all hover:scale-105 hover:shadow-xl hover:shadow-[#ff7d00]/50"
           >
-            <span className="relative z-10">ابدأ رحلتك الآن</span>
-            <div className="absolute inset-0 bg-linear-to-r from-[#ff7d00] to-[#ff9d33] opacity-0 group-hover:opacity-100 transition-opacity" />
+            ابدأ رحلتك الآن
           </a>
 
           <a
             href="#contact"
             onClick={(e) => {
               e.preventDefault();
-              const element = document.getElementById("contact");
-              if (element) {
-                const navHeight = 80;
-                const elementPosition = element.getBoundingClientRect().top;
-                const offsetPosition =
-                  elementPosition + window.pageYOffset - navHeight;
-                window.scrollTo({
-                  top: offsetPosition,
-                  behavior: "smooth",
-                });
-              }
+              smoothScroll("contact");
             }}
-            className="group px-8 py-4 glass border border-[#ff7d00]/30 text-white rounded-full font-bold text-lg transition-all hover:scale-105 hover:border-[#ff7d00] hover:bg-[#ff7d00]/10 inline-block"
+            className="px-8 py-4 glass border border-[#ff7d00]/30 text-white rounded-full font-bold text-lg transition-all hover:scale-105 hover:border-[#ff7d00] hover:bg-[#ff7d00]/10"
           >
             اكتشف خدماتنا
-            <span className="inline-block mr-4 transition-transform group-hover:translate-x-1">
-              ←
-            </span>
           </a>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.2 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto"
-        >
-          {[
-            { value: "100+", label: "صانع محتوى" },
-            { value: "50+", label: "علامة تجارية" },
-            { value: "1000+", label: "محتوى منتج" },
-            { value: "5M+", label: "متابع" },
-          ].map((stat, index) => (
-            <div
-              key={index}
-              className="glass p-6 rounded-2xl border border-[#ff7d00]/20 hover:border-[#ff7d00]/50 transition-all hover:scale-105"
-            >
-              <div className="text-3xl md:text-4xl font-bold gradient-text-orange mb-2">
-                {stat.value}
-              </div>
-              <div className="text-sm text-[#8892a6]">{stat.label}</div>
-            </div>
-          ))}
         </motion.div>
       </div>
 
