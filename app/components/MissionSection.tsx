@@ -1,16 +1,10 @@
 "use client";
 
-import { missionBlocks } from "../constants/content";
+import { missionBlocks, howWeWork } from "../constants/content";
 import { motion } from "framer-motion";
 
 export function MissionSection() {
   const mission = missionBlocks[2];
-
-  const missionPoints = [
-    { icon: "🎯", text: "نجمع صنّاع المحتوى في ورشة واحدة" },
-    { icon: "⚡", text: "ننظّم ظهورهم بشكل احترافي" },
-    { icon: "🤝", text: "نربطهم بالعلامات التجارية المناسبة" },
-  ];
 
   return (
     <section id="mission" className="relative py-24 sm:py-32 overflow-hidden">
@@ -55,13 +49,13 @@ export function MissionSection() {
           <div className="mb-8 flex justify-center">
             <div className="inline-block px-6 py-2 rounded-full bg-[#ff7d00]/10 border border-[#ff7d00]/30">
               <span className="text-lg text-[#ff7d00]">
-                شغل وكالة، مو شغل نص كم
+                {mission.subtitle}
               </span>
             </div>
           </div>
         </motion.div>
 
-        {/* Mission Content - Cards Grid */}
+        {/* Mission Content */}
         <div className="max-w-6xl mx-auto">
           {/* Main Mission Statement */}
           <motion.div
@@ -79,9 +73,22 @@ export function MissionSection() {
             </div>
           </motion.div>
 
-          {/* Mission Points Grid */}
-          <div className="grid md:grid-cols-3 gap-6 lg:gap-8 mt-20" dir="rtl">
-            {missionPoints.map((point, index) => (
+          {/* How We Work Title */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <h3 className="text-3xl sm:text-4xl font-bold text-[#ffecd1]">
+              كيف نشتغل؟
+            </h3>
+          </motion.div>
+
+          {/* How We Work Grid */}
+          <div className="grid md:grid-cols-3 gap-6 lg:gap-8" dir="rtl">
+            {howWeWork.map((step, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 50, scale: 0.9 }}
@@ -105,26 +112,20 @@ export function MissionSection() {
                   </div>
 
                   {/* Icon */}
-                  <div className="text-6xl mb-6 mt-8">{point.icon}</div>
+                  <div className="text-6xl mb-6 mt-8">{step.icon}</div>
+
+                  {/* Title */}
+                  <h4 className="text-xl font-bold text-[#ff7d00] mb-3">
+                    {step.title}
+                  </h4>
 
                   {/* Text */}
-                  <p className="text-xl sm:text-2xl text-[#ffecd1] leading-relaxed font-medium">
-                    {point.text}
+                  <p className="text-lg text-[#ffecd1]/80 leading-relaxed">
+                    {step.body}
                   </p>
                 </div>
               </motion.div>
             ))}
-          </div>
-
-          {/* Bottom Accent */}
-          <div className="mt-20 text-center">
-            <div className="inline-flex items-center gap-4 px-8 py-4 rounded-full bg-gradient-to-r from-[#ff7d00]/10 via-[#ff7d00]/20 to-[#ff7d00]/10 border border-[#ff7d00]/30">
-              <div className="w-3 h-3 rounded-full bg-[#ff7d00]" />
-              <span className="text-lg text-[#ffecd1]">
-                ورشة احترافية لصناعة المحتوى
-              </span>
-              <div className="w-3 h-3 rounded-full bg-[#ff7d00]" />
-            </div>
           </div>
         </div>
       </div>

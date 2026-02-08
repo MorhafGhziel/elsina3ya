@@ -99,12 +99,12 @@ export function ContactSection() {
           </div>
 
           <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black gradient-text mb-6 leading-tight pb-2 overflow-visible">
-            جاهز لتحويل <br />
+            جاهز تصنع <br />
             <span className="gradient-text-orange">حضورك الرقمي؟</span>
           </h2>
 
           <p className="text-xl text-[#8892a6] max-w-2xl mx-auto leading-relaxed">
-            انضم إلى مئات صُنّاع المحتوى والعلامات التجارية الذين اختاروا
+            انضم إلى مئات صنّاع المحتوى والعلامات التجارية الذين اختاروا
             الصناعية لتحقيق أهدافهم الرقمية
           </p>
         </motion.div>

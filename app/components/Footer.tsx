@@ -54,8 +54,7 @@ export function Footer() {
             </Link>
             <div className="h-px bg-[#ff7d00]/30 w-16 mb-6"></div>
             <p className="text-[#8892a6] leading-relaxed mb-6 text-sm">
-              صنّاع الأثر في العالم الرقمي. نمكّن المؤثرين ونربط العلامات
-              التجارية.
+              صنّاع الأثر في العالم الرقمي. نرتّب ظهورك، ونصنع تأثيرك.
             </p>
             <div className="flex gap-3">
               {socialLinks.map((social) => (
@@ -139,7 +138,7 @@ export function Footer() {
 
         <div className="pt-8 border-t border-[#ff7d00]/10">
           <div className="text-center text-[#8892a6] text-sm">
-            © 2025 الصناعية. جميع الحقوق محفوظة.
+            © 2026 الصناعية. جميع الحقوق محفوظة.
           </div>
         </div>
       </div>

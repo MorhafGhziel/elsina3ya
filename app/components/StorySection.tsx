@@ -28,7 +28,7 @@ export function StorySection() {
         </motion.div>
 
         {/* Story Content with Split Design */}
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-6xl mx-auto space-y-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -41,21 +41,34 @@ export function StorySection() {
               {/* Decorative Corner Accents */}
               <div className="absolute top-0 left-0 w-32 h-32 border-t-2 border-l-2 border-[#ff7d00]/30 rounded-tl-3xl" />
               <div className="absolute bottom-0 right-0 w-32 h-32 border-b-2 border-r-2 border-[#ff7d00]/30 rounded-br-3xl" />
-              
 
               {/* Content */}
               <div className="relative z-10 p-12 sm:p-16 lg:p-20" dir="rtl">
                 {/* Quote Mark */}
                 <div className="absolute top-8 right-8 text-9xl font-bold text-[#ff7d00] opacity-10 select-none">
-                  "
+                  &ldquo;
                 </div>
 
                 {/* Text */}
                 <p className="text-2xl sm:text-3xl lg:text-4xl leading-relaxed text-[#ffecd1] font-medium relative z-10">
                   {story.body}
                 </p>
-
               </div>
+            </div>
+          </motion.div>
+
+          {/* Quote Card */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            className="text-center"
+          >
+            <div className="inline-block px-8 py-5 rounded-2xl bg-[#ff7d00]/10 border border-[#ff7d00]/30">
+              <p className="text-lg sm:text-xl text-[#ff7d00] font-medium" dir="rtl">
+                &ldquo;{story.quote}&rdquo;
+              </p>
             </div>
           </motion.div>
         </div>
@@ -63,4 +76,3 @@ export function StorySection() {
     </section>
   );
 }
-

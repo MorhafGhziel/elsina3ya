@@ -99,7 +99,7 @@ export function Hero() {
             <span className="relative inline-flex rounded-full h-2 w-2 bg-[#ff7d00]"></span>
           </span>
           <span className="text-sm text-[#ff7d00] font-medium">
-            الصناعية - صنّاع الأثر
+            صنّاع الأثر في العالم الرقمي
           </span>
         </motion.div>
 
@@ -109,8 +109,8 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-black mb-6 leading-tight"
         >
-          <span className="block gradient-text mb-2">نرتب ظهورك</span>
-          <span className="block gradient-text-orange">ونضمن تأثيرك</span>
+          <span className="block gradient-text mb-2">نرتّب ظهورك</span>
+          <span className="block gradient-text-orange">ونصنع تأثيرك</span>
         </motion.h1>
 
         <motion.p
@@ -119,8 +119,9 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="text-lg md:text-xl lg:text-2xl text-[#8892a6] max-w-3xl mx-auto mb-12 leading-relaxed"
         >
-          نجمع صنّاع المحتوى في ورشة واحدة، ننظّم ظهورهم، ونربطهم بالعلامات
-          التجارية المناسبة
+          في الصناعية، نجمع صنّاع المحتوى والمؤثرين في ورشة احترافية واحدة،
+          ننظّم حضورهم الرقمي، ونربطهم بالعلامات التجارية المناسبة؛ لصناعة تأثير
+          حقيقي ومستدام
         </motion.p>
 
         <motion.div
@@ -130,10 +131,10 @@ export function Hero() {
           className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
         >
           <a
-            href="#story"
+            href="#contact"
             onClick={(e) => {
               e.preventDefault();
-              smoothScroll("story");
+              smoothScroll("contact");
             }}
             className="px-8 py-4 bg-[#ff7d00] text-[#0a0e1a] rounded-full font-bold text-lg transition-all hover:scale-105 hover:shadow-xl hover:shadow-[#ff7d00]/50"
           >
@@ -141,14 +142,14 @@ export function Hero() {
           </a>
 
           <a
-            href="#contact"
+            href="#story"
             onClick={(e) => {
               e.preventDefault();
-              smoothScroll("contact");
+              smoothScroll("story");
             }}
             className="px-8 py-4 glass border border-[#ff7d00]/30 text-white rounded-full font-bold text-lg transition-all hover:scale-105 hover:border-[#ff7d00] hover:bg-[#ff7d00]/10"
           >
-            اكتشف خدماتنا
+            اكتشف خدماتنا | قصتنا
           </a>
         </motion.div>
       </div>

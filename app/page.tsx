@@ -2,6 +2,7 @@ import { Hero } from "./components/Hero";
 import { StorySection } from "./components/StorySection";
 import { VisionSection } from "./components/VisionSection";
 import { MissionSection } from "./components/MissionSection";
+import { ServicesSection } from "./components/ServicesSection";
 import { ValuesSection } from "./components/ValuesSection";
 import { ContactSection } from "./components/ContactSection";
 import { Nav } from "./components/Nav";
@@ -32,6 +33,7 @@ export default function Home() {
         <StorySection />
         <VisionSection />
         <MissionSection />
+        <ServicesSection />
         <ValuesSection />
         <ContactSection />
         <Footer />

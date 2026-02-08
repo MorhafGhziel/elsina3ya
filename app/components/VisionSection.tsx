@@ -52,8 +52,23 @@ export function VisionSection() {
           </h2>
         </motion.div>
 
-        {/* Vision Content - Stacked Cards Design */}
+        {/* Vision Content */}
         <div className="max-w-5xl mx-auto space-y-8" dir="rtl">
+          {/* Subtitle */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-4"
+          >
+            <div className="inline-block px-6 py-3 rounded-full bg-[#ff7d00]/20 border border-[#ff7d00]/50">
+              <span className="text-xl sm:text-2xl font-bold text-[#ff7d00]">
+                {vision.subtitle}
+              </span>
+            </div>
+          </motion.div>
+
           {/* Main Vision Statement */}
           <motion.div
             initial={{ opacity: 0, y: 60, rotateX: -15 }}
@@ -65,35 +80,33 @@ export function VisionSection() {
           >
             <div className="relative overflow-hidden rounded-3xl border-2 border-[#ff7d00]/30 bg-linear-to-br from-[#ff7d00]/10 via-[#001524]/90 to-[#001524]/80 backdrop-blur-xl p-10 sm:p-14 lg:p-16 shadow-2xl hover:shadow-[#ff7d00]/20 transition-all duration-500">
               <div className="relative z-10">
-                {/* Highlight Key Phrase */}
-                <div className="inline-block mb-6 px-6 py-3 rounded-full bg-[#ff7d00]/20 border border-[#ff7d00]/50">
-                  <span className="text-xl sm:text-2xl font-bold text-[#ff7d00]">
-                    صنّاع الأثر
-                  </span>
-                </div>
-
-                <p className="text-2xl sm:text-3xl lg:text-4xl leading-relaxed text-[#ffecd1] font-medium">
+                <p className="text-2xl sm:text-3xl lg:text-4xl leading-relaxed text-[#ffecd1] font-medium mb-12">
                   {vision.body}
                 </p>
+
+                {/* Three Pillars */}
+                <div className="grid md:grid-cols-3 gap-6">
+                  {vision.pillars.map((pillar: { title: string; body: string }, i: number) => (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.6, delay: i * 0.15 }}
+                      className="p-6 rounded-2xl bg-[#001524]/60 border border-[#ffecd1]/10 hover:border-[#ff7d00]/40 transition-all"
+                    >
+                      <h4 className="text-xl font-bold text-[#ff7d00] mb-3">
+                        {pillar.title}
+                      </h4>
+                      <p className="text-[#ffecd1]/80 leading-relaxed">
+                        {pillar.body}
+                      </p>
+                    </motion.div>
+                  ))}
+                </div>
               </div>
             </div>
           </motion.div>
-
-          {/* Floating Accent Elements */}
-          <div className="flex justify-center gap-4 flex-wrap mt-8">
-            {["عبر تمكين المؤثرين", "ربطهم بالشركات", "تأثير رقمي حقيقي"].map(
-              (text, i) => (
-                <div
-                  key={i}
-                  className="px-6 py-3 rounded-full bg-[#001524]/60 border border-[#ffecd1]/20 backdrop-blur-sm hover:border-[#ff7d00]/50 transition-all duration-300"
-                >
-                  <span className="text-sm sm:text-base text-[#ffecd1]/80">
-                    {text}
-                  </span>
-                </div>
-              )
-            )}
-          </div>
         </div>
       </div>
     </section>

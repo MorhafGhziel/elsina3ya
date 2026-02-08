@@ -8,6 +8,7 @@ const navLinks = [
   { name: "قصتنا", href: "#story", id: "story" },
   { name: "الرؤية", href: "#vision", id: "vision" },
   { name: "رسالتنا", href: "#mission", id: "mission" },
+  { name: "الخدمات", href: "#services", id: "services" },
   { name: "القيم", href: "#values", id: "values" },
   { name: "تواصل معنا", href: "#contact", id: "contact" },
 ];
