@@ -4,7 +4,7 @@ import { missionBlocks } from "../constants/content";
 import { motion } from "framer-motion";
 
 export function VisionSection() {
-  const vision = missionBlocks[1];
+  const vision = missionBlocks[1] as typeof missionBlocks[1] & { subtitle: string; pillars: { title: string; body: string }[] };
 
   return (
     <section id="vision" className="relative py-24 sm:py-32 overflow-hidden">
@@ -86,7 +86,7 @@ export function VisionSection() {
 
                 {/* Three Pillars */}
                 <div className="grid md:grid-cols-3 gap-6">
-                  {vision.pillars.map((pillar: { title: string; body: string }, i: number) => (
+                  {vision.pillars.map((pillar, i) => (
                     <motion.div
                       key={i}
                       initial={{ opacity: 0, y: 30 }}

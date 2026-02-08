@@ -4,7 +4,7 @@ import { missionBlocks } from "../constants/content";
 import { motion } from "framer-motion";
 
 export function StorySection() {
-  const story = missionBlocks[0];
+  const story = missionBlocks[0] as typeof missionBlocks[0] & { quote: string };
 
   return (
     <section id="story" className="relative py-24 sm:py-32 overflow-hidden">
