@@ -124,7 +124,7 @@ export function CursorEffects() {
           opacity: 0
         }}
       >
-        <div className="w-full h-full rounded-full bg-[#ff7d00]" />
+        <div className="w-full h-full rounded-full bg-[#FF4700]" />
       </div>
 
       <div
@@ -136,7 +136,7 @@ export function CursorEffects() {
           opacity: 0
         }}
       >
-        <div className="w-full h-full rounded-full border-2 border-[#ff7d00] opacity-50" />
+        <div className="w-full h-full rounded-full border-2 border-[#FF4700] opacity-50" />
       </div>
 
       <div
@@ -149,7 +149,7 @@ export function CursorEffects() {
           position: absolute;
           width: 4px;
           height: 4px;
-          background: #ff7d00;
+          background: #FF4700;
           border-radius: 50%;
           pointer-events: none;
           transform: translate(-50%, -50%);

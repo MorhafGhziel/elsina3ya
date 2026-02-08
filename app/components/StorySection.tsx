@@ -10,7 +10,7 @@ export function StorySection() {
     <section id="story" className="relative py-24 sm:py-32 overflow-hidden">
       {/* Simplified Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full bg-gradient-to-br from-[#ff7d00]/5 to-transparent blur-3xl" />
+        <div className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full bg-gradient-to-br from-[#FF4700]/5 to-transparent blur-3xl" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
@@ -22,7 +22,7 @@ export function StorySection() {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="mb-20 text-center relative"
         >
-          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-[#ffecd1] leading-tight pb-2">
+          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-[#ffecd1] leading-relaxed pb-2">
             {story.title}
           </h2>
         </motion.div>
@@ -39,13 +39,13 @@ export function StorySection() {
             {/* Main Content Card */}
             <div className="relative overflow-hidden rounded-3xl border border-[#ffecd1]/20 bg-gradient-to-br from-[#001524]/80 to-[#001524]/60 backdrop-blur-xl">
               {/* Decorative Corner Accents */}
-              <div className="absolute top-0 left-0 w-32 h-32 border-t-2 border-l-2 border-[#ff7d00]/30 rounded-tl-3xl" />
-              <div className="absolute bottom-0 right-0 w-32 h-32 border-b-2 border-r-2 border-[#ff7d00]/30 rounded-br-3xl" />
+              <div className="absolute top-0 left-0 w-32 h-32 border-t-2 border-l-2 border-[#FF4700]/30 rounded-tl-3xl" />
+              <div className="absolute bottom-0 right-0 w-32 h-32 border-b-2 border-r-2 border-[#FF4700]/30 rounded-br-3xl" />
 
               {/* Content */}
               <div className="relative z-10 p-12 sm:p-16 lg:p-20" dir="rtl">
                 {/* Quote Mark */}
-                <div className="absolute top-8 right-8 text-9xl font-bold text-[#ff7d00] opacity-10 select-none">
+                <div className="absolute top-8 right-8 text-9xl font-bold text-[#FF4700] opacity-10 select-none">
                   &ldquo;
                 </div>
 
@@ -65,8 +65,8 @@ export function StorySection() {
             transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             className="text-center"
           >
-            <div className="inline-block px-8 py-5 rounded-2xl bg-[#ff7d00]/10 border border-[#ff7d00]/30">
-              <p className="text-lg sm:text-xl text-[#ff7d00] font-medium" dir="rtl">
+            <div className="inline-block px-8 py-5 rounded-2xl bg-[#FF4700]/10 border border-[#FF4700]/30">
+              <p className="text-lg sm:text-xl text-[#FF4700] font-medium" dir="rtl">
                 &ldquo;{story.quote}&rdquo;
               </p>
             </div>

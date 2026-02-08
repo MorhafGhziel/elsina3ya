@@ -10,7 +10,7 @@ export function MissionSection() {
     <section id="mission" className="relative py-24 sm:py-32 overflow-hidden">
       {/* Simplified Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute bottom-1/4 left-1/4 w-96 h-96 rounded-full bg-gradient-to-tr from-[#ff7d00]/5 to-transparent blur-3xl" />
+        <div className="absolute bottom-1/4 left-1/4 w-96 h-96 rounded-full bg-gradient-to-tr from-[#FF4700]/5 to-transparent blur-3xl" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
@@ -24,7 +24,7 @@ export function MissionSection() {
         >
           {/* Simple Icon */}
           <div className="mb-8 flex justify-center">
-            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#ff7d00] to-[#ff7d00]/50 flex items-center justify-center shadow-lg shadow-[#ff7d00]/30">
+            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#FF4700] to-[#FF4700]/50 flex items-center justify-center shadow-lg shadow-[#FF4700]/30">
               <svg
                 className="w-8 h-8 text-[#001524]"
                 fill="none"
@@ -41,14 +41,14 @@ export function MissionSection() {
             </div>
           </div>
 
-          <h2 className="text-5xl sm:text-6xl lg:text-8xl font-bold text-[#ffecd1] leading-tight relative inline-block mb-6">
+          <h2 className="text-5xl sm:text-6xl lg:text-8xl font-bold text-[#ffecd1] leading-relaxed relative inline-block mb-6">
             {mission.title}
           </h2>
 
           {/* Subtitle Badge */}
           <div className="mb-8 flex justify-center">
-            <div className="inline-block px-6 py-2 rounded-full bg-[#ff7d00]/10 border border-[#ff7d00]/30">
-              <span className="text-lg text-[#ff7d00]">
+            <div className="inline-block px-6 py-2 rounded-full bg-[#FF4700]/10 border border-[#FF4700]/30">
+              <span className="text-lg text-[#FF4700]">
                 {mission.subtitle}
               </span>
             </div>
@@ -103,10 +103,10 @@ export function MissionSection() {
                 whileHover={{ y: -10, scale: 1.02 }}
                 className="group relative"
               >
-                <div className="relative overflow-hidden rounded-3xl border border-[#ffecd1]/20 bg-gradient-to-br from-[#001524]/80 to-[#001524]/60 backdrop-blur-xl p-8 h-full transition-all duration-500 hover:border-[#ff7d00]/50 hover:shadow-2xl hover:shadow-[#ff7d00]/20">
+                <div className="relative overflow-hidden rounded-3xl border border-[#ffecd1]/20 bg-gradient-to-br from-[#001524]/80 to-[#001524]/60 backdrop-blur-xl p-8 h-full transition-all duration-500 hover:border-[#FF4700]/50 hover:shadow-2xl hover:shadow-[#FF4700]/20">
                   {/* Number Badge */}
-                  <div className="absolute top-4 left-4 w-10 h-10 rounded-full bg-[#ff7d00]/20 border border-[#ff7d00]/50 flex items-center justify-center">
-                    <span className="text-[#ff7d00] font-bold">
+                  <div className="absolute top-4 left-4 w-10 h-10 rounded-full bg-[#FF4700]/20 border border-[#FF4700]/50 flex items-center justify-center">
+                    <span className="text-[#FF4700] font-bold">
                       {index + 1}
                     </span>
                   </div>
@@ -115,7 +115,7 @@ export function MissionSection() {
                   <div className="text-6xl mb-6 mt-8">{step.icon}</div>
 
                   {/* Title */}
-                  <h4 className="text-xl font-bold text-[#ff7d00] mb-3">
+                  <h4 className="text-xl font-bold text-[#FF4700] mb-3">
                     {step.title}
                   </h4>
 

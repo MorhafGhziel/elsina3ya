@@ -32,17 +32,17 @@ export function ModulesSection() {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="mb-16"
         >
-          <div className="group relative overflow-hidden rounded-2xl sm:rounded-3xl border border-[#ffecd1]/10 bg-linear-to-br from-[#001524]/60 to-[#001524]/40 p-8 sm:p-10 backdrop-blur-md transition-all duration-500 hover:border-[#ff7d00]/50 hover:shadow-2xl hover:shadow-[#ff7d00]/20">
+          <div className="group relative overflow-hidden rounded-2xl sm:rounded-3xl border border-[#ffecd1]/10 bg-linear-to-br from-[#001524]/60 to-[#001524]/40 p-8 sm:p-10 backdrop-blur-md transition-all duration-500 hover:border-[#FF4700]/50 hover:shadow-2xl hover:shadow-[#FF4700]/20">
             <div
-              className="absolute inset-0 bg-linear-to-br from-[#ff7d00]/0 to-[#ff7d00]/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+              className="absolute inset-0 bg-linear-to-br from-[#FF4700]/0 to-[#FF4700]/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
               style={{
-                background: `linear-gradient(135deg, rgba(255, 125, 0, 0.15) 0%, transparent 100%)`,
+                background: `linear-gradient(135deg, rgba(255, 71, 0, 0.15) 0%, transparent 100%)`,
               }}
             />
             
             <div className="relative z-10">
               <div className="mb-8">
-                <div className="mb-4 inline-block rounded-full bg-[#ff7d00] px-5 py-2">
+                <div className="mb-4 inline-block rounded-full bg-[#FF4700] px-5 py-2">
                   <span className="text-sm font-bold text-[#001524]">للمؤثرين</span>
                 </div>
                 <h3 className="mb-4 text-3xl font-bold text-[#ffecd1]">
@@ -54,7 +54,7 @@ export function ModulesSection() {
                 <div className="mb-8 space-y-2">
                   {whatWeOffer.forInfluencers.points.map((point, idx) => (
                     <div key={idx} className="flex items-start gap-3">
-                      <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#ff7d00]" />
+                      <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#FF4700]" />
                       <p className="text-[#ffecd1]/80">{point}</p>
                     </div>
                   ))}
@@ -69,16 +69,16 @@ export function ModulesSection() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: idx * 0.05, duration: 0.5 }}
-                    className="group/item flex items-start gap-3 rounded-xl border border-[#ffecd1]/10 bg-[#001524]/50 p-4 backdrop-blur-sm transition-all duration-300 hover:border-[#ff7d00]/50 hover:bg-[#ff7d00]/10"
+                    className="group/item flex items-start gap-3 rounded-xl border border-[#ffecd1]/10 bg-[#001524]/50 p-4 backdrop-blur-sm transition-all duration-300 hover:border-[#FF4700]/50 hover:bg-[#FF4700]/10"
                   >
-                    <div className="mt-1 h-2 w-2 rounded-full bg-[#ff7d00] transition-transform group-hover/item:scale-125" />
+                    <div className="mt-1 h-2 w-2 rounded-full bg-[#FF4700] transition-transform group-hover/item:scale-125" />
                     <p className="text-sm text-[#ffecd1]/90">{service}</p>
                   </motion.div>
                 ))}
               </div>
             </div>
 
-            <div className="absolute -right-20 -top-20 h-60 w-60 rounded-full bg-[#ff7d00]/5 blur-3xl transition-all duration-500 group-hover:bg-[#ff7d00]/10 group-hover:scale-150" />
+            <div className="absolute -right-20 -top-20 h-60 w-60 rounded-full bg-[#FF4700]/5 blur-3xl transition-all duration-500 group-hover:bg-[#FF4700]/10 group-hover:scale-150" />
           </div>
         </motion.div>
 

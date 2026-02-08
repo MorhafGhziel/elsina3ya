@@ -25,25 +25,25 @@ export async function POST(request: NextRequest) {
 
     const emailHtml = `
       <div dir="rtl" style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #0a0e1a; color: #ffffff;">
-        <h2 style="color: #ff7d00; border-bottom: 2px solid #ff7d00; padding-bottom: 10px;">
+        <h2 style="color: #FF4700; border-bottom: 2px solid #FF4700; padding-bottom: 10px;">
           رسالة جديدة من موقع الصناعية
         </h2>
         
         <div style="margin-top: 30px; line-height: 1.8;">
-          <p><strong style="color: #ff7d00;">الاسم:</strong> ${name}</p>
-          <p><strong style="color: #ff7d00;">البريد الإلكتروني:</strong> ${email}</p>
+          <p><strong style="color: #FF4700;">الاسم:</strong> ${name}</p>
+          <p><strong style="color: #FF4700;">البريد الإلكتروني:</strong> ${email}</p>
           ${
             phone
-              ? `<p><strong style="color: #ff7d00;">رقم الهاتف:</strong> ${phone}</p>`
+              ? `<p><strong style="color: #FF4700;">رقم الهاتف:</strong> ${phone}</p>`
               : ""
           }
-          <p><strong style="color: #ff7d00;">الرسالة:</strong></p>
-          <p style="background-color: #001524; padding: 15px; border-radius: 8px; border-right: 3px solid #ff7d00;">
+          <p><strong style="color: #FF4700;">الرسالة:</strong></p>
+          <p style="background-color: #001524; padding: 15px; border-radius: 8px; border-right: 3px solid #FF4700;">
             ${message.replace(/\n/g, "<br>")}
           </p>
         </div>
         
-        <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #ff7d00; font-size: 12px; color: #8892a6;">
+        <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #FF4700; font-size: 12px; color: #8892a6;">
           <p>تم إرسال هذه الرسالة من نموذج التواصل في موقع الصناعية</p>
         </div>
       </div>

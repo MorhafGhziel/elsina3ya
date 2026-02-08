@@ -18,7 +18,7 @@ export function ContactSection() {
       className="relative py-32 px-6 lg:px-8 overflow-hidden"
     >
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/2 left-1/4 w-96 h-96 rounded-full opacity-15 blur-3xl bg-gradient-to-br from-[#ff7d00]/20 to-transparent" />
+        <div className="absolute top-1/2 left-1/4 w-96 h-96 rounded-full opacity-15 blur-3xl bg-gradient-to-br from-[#FF4700]/20 to-transparent" />
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full opacity-10 blur-3xl bg-gradient-to-br from-[#ff9d33]/15 to-transparent" />
       </div>
 
@@ -35,7 +35,7 @@ export function ContactSection() {
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
           className="relative w-32 h-40 sm:w-40 sm:h-52 md:w-48 md:h-64 lg:w-56 lg:h-72 rounded-3xl overflow-hidden"
           style={{
-            boxShadow: "0 20px 40px -12px rgba(255, 125, 0, 0.3)",
+            boxShadow: "0 20px 40px -12px rgba(255, 71, 0, 0.3)",
           }}
         >
           <Image
@@ -88,17 +88,17 @@ export function ContactSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-[#ff7d00]/30 mb-8">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-[#FF4700]/30 mb-8">
             <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ff7d00] opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#ff7d00]"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FF4700] opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#FF4700]"></span>
             </span>
-            <span className="text-sm text-[#ff7d00] font-medium">
+            <span className="text-sm text-[#FF4700] font-medium">
               تواصل معنا
             </span>
           </div>
 
-          <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black gradient-text mb-6 leading-tight pb-2 overflow-visible">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black gradient-text mb-6 leading-relaxed pb-2 overflow-visible">
             جاهز تصنع <br />
             <span className="gradient-text-orange">حضورك الرقمي؟</span>
           </h2>
@@ -115,7 +115,7 @@ export function ContactSection() {
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="glass-strong p-8 md:p-10 rounded-3xl border border-[#ff7d00]/30"
+            className="glass-strong p-8 md:p-10 rounded-3xl border border-[#FF4700]/30"
             dir="rtl"
           >
             <h3 className="text-2xl md:text-3xl font-bold text-white mb-8 text-center">
@@ -126,13 +126,13 @@ export function ContactSection() {
               <motion.a
                 href="mailto:Info@snaya.sa"
                 whileHover={{ scale: 1.02 }}
-                className="glass p-5 rounded-2xl border border-[#ff7d00]/20 hover:border-[#ff7d00]/50 transition-all flex items-center gap-4 cursor-pointer"
+                className="glass p-5 rounded-2xl border border-[#FF4700]/20 hover:border-[#FF4700]/50 transition-all flex items-center gap-4 cursor-pointer"
               >
                 <div className="flex-1">
                   <p className="text-[#8892a6] text-sm mb-1">البريد الإلكتروني</p>
                   <p className="text-white font-semibold" dir="ltr">Info@snaya.sa</p>
                 </div>
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#ff7d00] to-[#ff9d33] flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#FF4700] to-[#ff9d33] flex items-center justify-center flex-shrink-0">
                   <svg className="w-6 h-6 text-[#0a0e1a]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
@@ -142,13 +142,13 @@ export function ContactSection() {
               <motion.a
                 href="tel:+966571077778"
                 whileHover={{ scale: 1.02 }}
-                className="glass p-5 rounded-2xl border border-[#ff7d00]/20 hover:border-[#ff7d00]/50 transition-all flex items-center gap-4 cursor-pointer"
+                className="glass p-5 rounded-2xl border border-[#FF4700]/20 hover:border-[#FF4700]/50 transition-all flex items-center gap-4 cursor-pointer"
               >
                 <div className="flex-1">
                   <p className="text-[#8892a6] text-sm mb-1">الهاتف</p>
                   <p className="text-white font-semibold" dir="ltr">+966 571 077 778</p>
                 </div>
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#ff7d00] to-[#ff9d33] flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#FF4700] to-[#ff9d33] flex items-center justify-center flex-shrink-0">
                   <svg className="w-6 h-6 text-[#0a0e1a]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
@@ -157,13 +157,13 @@ export function ContactSection() {
 
               <motion.div
                 whileHover={{ scale: 1.02 }}
-                className="glass p-5 rounded-2xl border border-[#ff7d00]/20 hover:border-[#ff7d00]/50 transition-all flex items-center gap-4"
+                className="glass p-5 rounded-2xl border border-[#FF4700]/20 hover:border-[#FF4700]/50 transition-all flex items-center gap-4"
               >
                 <div className="flex-1">
                   <p className="text-[#8892a6] text-sm mb-1">العنوان</p>
                   <p className="text-white font-semibold">الرياض، المملكة العربية السعودية</p>
                 </div>
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#ff7d00] to-[#ff9d33] flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#FF4700] to-[#ff9d33] flex items-center justify-center flex-shrink-0">
                   <svg className="w-6 h-6 text-[#0a0e1a]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -178,7 +178,7 @@ export function ContactSection() {
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="glass-strong p-8 md:p-10 rounded-3xl border border-[#ff7d00]/30 flex flex-col items-center justify-center text-center"
+            className="glass-strong p-8 md:p-10 rounded-3xl border border-[#FF4700]/30 flex flex-col items-center justify-center text-center"
           >
             <motion.div
               animate={{ y: [0, -8, 0] }}
@@ -204,7 +204,7 @@ export function ContactSection() {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
-              className="w-full max-w-sm px-10 py-5 bg-gradient-to-r from-[#ff7d00] to-[#ff9d33] text-[#0a0e1a] rounded-full font-bold text-lg transition-all hover:shadow-xl hover:shadow-[#ff7d00]/50 flex items-center justify-center gap-3"
+              className="w-full max-w-sm px-10 py-5 bg-gradient-to-r from-[#FF4700] to-[#ff9d33] text-[#0a0e1a] rounded-full font-bold text-lg transition-all hover:shadow-xl hover:shadow-[#FF4700]/50 flex items-center justify-center gap-3"
             >
               <span>تواصل عبر الواتساب</span>
               <svg className="w-5 h-5 rtl:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -223,15 +223,15 @@ export function ContactSection() {
         >
           <div className="flex flex-wrap items-center justify-center gap-6 text-[#8892a6] text-sm">
             <div className="flex items-center gap-2">
-              <span className="text-[#ff7d00]">&#10003;</span>
+              <span className="text-[#FF4700]">&#10003;</span>
               <span>موثوق من 100+ عميل</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-[#ff7d00]">&#10003;</span>
+              <span className="text-[#FF4700]">&#10003;</span>
               <span>تقييم 5.0 نجوم</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-[#ff7d00]">&#10003;</span>
+              <span className="text-[#FF4700]">&#10003;</span>
               <span>دعم باللغة العربية</span>
             </div>
           </div>

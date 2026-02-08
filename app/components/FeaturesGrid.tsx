@@ -8,31 +8,31 @@ const features = [
     icon: "🎯",
     title: "إدارة المواهب",
     description: "نحوّل المؤثر من فرد يعمل وحده إلى كيان إعلامي مُدار باحتراف",
-    gradient: "from-[#ff7d00] to-[#ff9d33]",
+    gradient: "from-[#FF4700] to-[#ff9d33]",
   },
   {
     icon: "🎬",
     title: "إنتاج المحتوى",
     description: "محتوى احترافي بجودة شركات الإنتاج الكبيرة",
-    gradient: "from-[#ff9d33] to-[#ff7d00]",
+    gradient: "from-[#ff9d33] to-[#FF4700]",
   },
   {
     icon: "📊",
     title: "تحليل الأداء",
     description: "تحليل دقيق لأداء المحتوى وتقارير شهرية مفصلة",
-    gradient: "from-[#ff7d00] to-[#ffffff]",
+    gradient: "from-[#FF4700] to-[#ffffff]",
   },
   {
     icon: "🤝",
     title: "ربط العلامات",
     description: "نربط الشركات بالمؤثر المناسب لتحقيق أفضل النتائج",
-    gradient: "from-[#ffffff] to-[#ff7d00]",
+    gradient: "from-[#ffffff] to-[#FF4700]",
   },
   {
     icon: "💡",
     title: "استراتيجية المحتوى",
     description: "خطط محتوى شهرية مبتكرة تواكب ثقافة اليوم",
-    gradient: "from-[#ff7d00] to-[#ff9d33]",
+    gradient: "from-[#FF4700] to-[#ff9d33]",
   },
   {
     icon: "🚀",
@@ -55,7 +55,7 @@ export function FeaturesGrid() {
         <div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full opacity-10 blur-3xl"
           style={{
-            background: "radial-gradient(circle, #ff7d00 0%, transparent 70%)",
+            background: "radial-gradient(circle, #FF4700 0%, transparent 70%)",
           }}
         />
       </div>
@@ -67,7 +67,7 @@ export function FeaturesGrid() {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-black gradient-text mb-6 leading-tight pb-2 overflow-visible">
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-black gradient-text mb-6 leading-relaxed pb-2 overflow-visible">
             خدماتنا المميزة
           </h2>
           <p className="text-xl text-[#8892a6] max-w-2xl mx-auto">
@@ -84,25 +84,25 @@ export function FeaturesGrid() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="group relative"
             >
-              <div className="relative h-full glass-strong p-8 rounded-3xl border border-[#ff7d00]/20 hover:border-[#ff7d00]/60 transition-all duration-500 hover:scale-105 hover:-translate-y-2">
+              <div className="relative h-full glass-strong p-8 rounded-3xl border border-[#FF4700]/20 hover:border-[#FF4700]/60 transition-all duration-500 hover:scale-105 hover:-translate-y-2">
                 <div
                   className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
                 />
 
                 <div className="relative mb-6">
-                  <div className="w-16 h-16 flex items-center justify-center rounded-2xl bg-gradient-to-br from-[#ff7d00]/20 to-[#ff7d00]/5 border border-[#ff7d00]/30 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-500">
+                  <div className="w-16 h-16 flex items-center justify-center rounded-2xl bg-gradient-to-br from-[#FF4700]/20 to-[#FF4700]/5 border border-[#FF4700]/30 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-500">
                     <span className="text-4xl">{feature.icon}</span>
                   </div>
                 </div>
 
-                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-[#ff7d00] transition-colors">
+                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-[#FF4700] transition-colors">
                   {feature.title}
                 </h3>
                 <p className="text-[#8892a6] leading-relaxed">
                   {feature.description}
                 </p>
 
-                <div className="absolute -inset-1 bg-gradient-to-br from-[#ff7d00]/0 via-[#ff7d00]/5 to-[#ff7d00]/0 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
+                <div className="absolute -inset-1 bg-gradient-to-br from-[#FF4700]/0 via-[#FF4700]/5 to-[#FF4700]/0 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
               </div>
             </motion.div>
           ))}

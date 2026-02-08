@@ -64,7 +64,7 @@ export function Testimonials() {
           className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full opacity-30"
           style={{
             background:
-              "radial-gradient(ellipse at center, rgba(255, 125, 0, 0.15) 0%, transparent 70%)",
+              "radial-gradient(ellipse at center, rgba(255, 71, 0, 0.15) 0%, transparent 70%)",
           }}
         />
       </div>
@@ -77,7 +77,7 @@ export function Testimonials() {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-black gradient-text mb-6 leading-tight pb-2 overflow-visible">
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-black gradient-text mb-6 leading-relaxed pb-2 overflow-visible">
             آراء شركائنا
           </h2>
           <p className="text-xl text-[#8892a6] max-w-2xl mx-auto">
@@ -96,9 +96,9 @@ export function Testimonials() {
               transition={{ duration: 0.5 }}
               className="relative"
             >
-              <div className="glass-strong p-10 md:p-16 rounded-3xl border border-[#ff7d00]/30 hover:border-[#ff7d00]/60 transition-all">
+              <div className="glass-strong p-10 md:p-16 rounded-3xl border border-[#FF4700]/30 hover:border-[#FF4700]/60 transition-all">
                 {/* Quote icon */}
-                <div className="absolute top-8 right-8 text-6xl text-[#ff7d00]/20">
+                <div className="absolute top-8 right-8 text-6xl text-[#FF4700]/20">
                   "
                 </div>
 
@@ -113,7 +113,7 @@ export function Testimonials() {
                           initial={{ opacity: 0, scale: 0 }}
                           animate={{ opacity: 1, scale: 1 }}
                           transition={{ delay: i * 0.1 }}
-                          className="text-[#ff7d00] text-2xl"
+                          className="text-[#FF4700] text-2xl"
                         >
                           ★
                         </motion.span>
@@ -128,7 +128,7 @@ export function Testimonials() {
 
                   {/* Author */}
                   <div className="flex items-center justify-center gap-4">
-                    <div className="w-16 h-16 flex items-center justify-center rounded-full bg-gradient-to-br from-[#ff7d00] to-[#ff9d33] text-3xl">
+                    <div className="w-16 h-16 flex items-center justify-center rounded-full bg-gradient-to-br from-[#FF4700] to-[#ff9d33] text-3xl">
                       {testimonials[currentIndex].avatar}
                     </div>
                     <div className="text-right">
@@ -151,9 +151,9 @@ export function Testimonials() {
           {/* Previous button */}
           <button
             onClick={handlePrev}
-            className="group w-14 h-14 flex items-center justify-center rounded-full glass border border-[#ff7d00]/30 hover:border-[#ff7d00] hover:bg-[#ff7d00]/10 transition-all hover:scale-110"
+            className="group w-14 h-14 flex items-center justify-center rounded-full glass border border-[#FF4700]/30 hover:border-[#FF4700] hover:bg-[#FF4700]/10 transition-all hover:scale-110"
           >
-            <span className="text-[#ff7d00] text-2xl group-hover:scale-125 transition-transform">
+            <span className="text-[#FF4700] text-2xl group-hover:scale-125 transition-transform">
               →
             </span>
           </button>
@@ -166,8 +166,8 @@ export function Testimonials() {
                 onClick={() => setCurrentIndex(index)}
                 className={`h-2 rounded-full transition-all ${
                   index === currentIndex
-                    ? "w-12 bg-[#ff7d00]"
-                    : "w-2 bg-[#ff7d00]/30 hover:bg-[#ff7d00]/60"
+                    ? "w-12 bg-[#FF4700]"
+                    : "w-2 bg-[#FF4700]/30 hover:bg-[#FF4700]/60"
                 }`}
               />
             ))}
@@ -176,9 +176,9 @@ export function Testimonials() {
           {/* Next button */}
           <button
             onClick={handleNext}
-            className="group w-14 h-14 flex items-center justify-center rounded-full glass border border-[#ff7d00]/30 hover:border-[#ff7d00] hover:bg-[#ff7d00]/10 transition-all hover:scale-110"
+            className="group w-14 h-14 flex items-center justify-center rounded-full glass border border-[#FF4700]/30 hover:border-[#FF4700] hover:bg-[#FF4700]/10 transition-all hover:scale-110"
           >
-            <span className="text-[#ff7d00] text-2xl group-hover:scale-125 transition-transform">
+            <span className="text-[#FF4700] text-2xl group-hover:scale-125 transition-transform">
               ←
             </span>
           </button>
@@ -198,12 +198,12 @@ export function Testimonials() {
               whileHover={{ scale: 1.02 }}
               className={`glass p-6 rounded-2xl border text-right transition-all ${
                 index === currentIndex
-                  ? "border-[#ff7d00] bg-[#ff7d00]/10"
-                  : "border-[#ff7d00]/20 hover:border-[#ff7d00]/50"
+                  ? "border-[#FF4700] bg-[#FF4700]/10"
+                  : "border-[#FF4700]/20 hover:border-[#FF4700]/50"
               }`}
             >
               <div className="flex items-center gap-4 mb-3">
-                <div className="w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-br from-[#ff7d00] to-[#ff9d33] text-2xl">
+                <div className="w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-br from-[#FF4700] to-[#ff9d33] text-2xl">
                   {testimonial.avatar}
                 </div>
                 <div className="flex-1 text-right">

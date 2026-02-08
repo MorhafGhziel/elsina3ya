@@ -57,7 +57,7 @@ export function FloatingParticles() {
       }
 
       draw() {
-        this.ctx.fillStyle = `rgba(255, 125, 0, ${this.opacity})`;
+        this.ctx.fillStyle = `rgba(255, 71, 0, ${this.opacity})`;
         this.ctx.beginPath();
         this.ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         this.ctx.fill();
@@ -103,7 +103,7 @@ export function FloatingParticles() {
 
             if (distance < 120) {
               const opacity = (1 - distance / 120) * 0.15;
-              ctx.strokeStyle = `rgba(255, 125, 0, ${opacity})`;
+              ctx.strokeStyle = `rgba(255, 71, 0, ${opacity})`;
               ctx.lineWidth = 0.5;
               ctx.beginPath();
               ctx.moveTo(particleA.x, particleA.y);

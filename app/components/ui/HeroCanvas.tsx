@@ -19,13 +19,13 @@ function AnimatedSphere() {
     <Float speed={1.5} rotationIntensity={0.3} floatIntensity={0.3}>
       <Sphere ref={meshRef} args={[1, 100, 100]} scale={2.5}>
         <MeshDistortMaterial
-          color="#ff7d00"
+          color="#FF4700"
           attach="material"
           distort={0.2}
           speed={1.5}
           roughness={0.2}
           metalness={0.8}
-          emissive="#ff7d00"
+          emissive="#FF4700"
           emissiveIntensity={0.2}
         />
       </Sphere>
@@ -93,7 +93,7 @@ function TwistedTorus() {
           wireframe
           transparent
           opacity={0.3}
-          emissive="#ff7d00"
+          emissive="#FF4700"
           emissiveIntensity={0.2}
           depthWrite={false}
         />
@@ -117,7 +117,7 @@ export function HeroCanvas() {
           angle={0.5}
           penumbra={1}
           intensity={2}
-          color="#ff7d00"
+          color="#FF4700"
         />
 
         <AnimatedSphere />

@@ -31,7 +31,7 @@ export function ValuesSection() {
     <section id="values" className="relative py-24 sm:py-32 overflow-hidden">
       {/* Simplified Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-[#ff7d00]/10 to-transparent rounded-full blur-3xl" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-[#FF4700]/10 to-transparent rounded-full blur-3xl" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
@@ -45,7 +45,7 @@ export function ValuesSection() {
         >
           {/* Diamond Icon */}
           <div className="mb-8 flex justify-center">
-            <div className="w-16 h-16 bg-gradient-to-br from-[#ff7d00] to-[#ff7d00]/50 transform rotate-45 shadow-lg shadow-[#ff7d00]/30">
+            <div className="w-16 h-16 bg-gradient-to-br from-[#FF4700] to-[#FF4700]/50 transform rotate-45 shadow-lg shadow-[#FF4700]/30">
               <div className="absolute inset-2 bg-[#001524] transform" />
             </div>
           </div>
@@ -81,28 +81,28 @@ export function ValuesSection() {
               style={{ perspective: '1000px' }}
               className="group relative"
             >
-              <div className="relative overflow-hidden rounded-3xl border-2 border-[#ffecd1]/20 bg-gradient-to-br from-[#001524]/90 to-[#001524]/70 backdrop-blur-xl p-8 h-full transition-all duration-500 hover:border-[#ff7d00]/60 hover:shadow-2xl hover:shadow-[#ff7d00]/30">
+              <div className="relative overflow-hidden rounded-3xl border-2 border-[#ffecd1]/20 bg-gradient-to-br from-[#001524]/90 to-[#001524]/70 backdrop-blur-xl p-8 h-full transition-all duration-500 hover:border-[#FF4700]/60 hover:shadow-2xl hover:shadow-[#FF4700]/30">
 
                 <div className="relative z-10">
                   {/* Icon Container */}
                   <div className="mb-6 relative">
-                    <div className="w-16 h-16 flex items-center justify-center rounded-2xl bg-gradient-to-br from-[#ff7d00]/30 to-[#ff7d00]/10 border border-[#ff7d00]/30 text-[#ff7d00]">
+                    <div className="w-16 h-16 flex items-center justify-center rounded-2xl bg-gradient-to-br from-[#FF4700]/30 to-[#FF4700]/10 border border-[#FF4700]/30 text-[#FF4700]">
                       {valueIcons[index]}
                     </div>
                     
                     {/* Number Badge */}
-                    <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-[#ff7d00] text-[#001524] flex items-center justify-center font-bold text-sm shadow-lg">
+                    <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-[#FF4700] text-[#001524] flex items-center justify-center font-bold text-sm shadow-lg">
                       {index + 1}
                     </div>
                   </div>
 
                   {/* Title */}
-                  <h3 className="mb-4 text-2xl font-bold text-[#ffecd1] group-hover:text-[#ff7d00] transition-colors duration-300">
+                  <h3 className="mb-4 text-2xl font-bold text-[#ffecd1] group-hover:text-[#FF4700] transition-colors duration-300">
                     {value.title}
                   </h3>
 
                   {/* Divider */}
-                  <div className="h-0.5 bg-gradient-to-r from-[#ff7d00]/50 to-transparent mb-4" />
+                  <div className="h-0.5 bg-gradient-to-r from-[#FF4700]/50 to-transparent mb-4" />
 
                   {/* Description */}
                   <p className="text-base leading-relaxed text-[#ffecd1]/80">
@@ -118,11 +118,11 @@ export function ValuesSection() {
         {/* Bottom Decorative Element */}
         <div className="mt-20 flex justify-center">
           <div className="flex items-center gap-3">
-            <div className="w-2 h-2 rounded-full bg-[#ff7d00]" />
-            <div className="h-px w-16 bg-gradient-to-r from-[#ff7d00] to-transparent" />
-            <div className="w-3 h-3 rounded-full bg-[#ff7d00]" />
-            <div className="h-px w-16 bg-gradient-to-l from-[#ff7d00] to-transparent" />
-            <div className="w-2 h-2 rounded-full bg-[#ff7d00]" />
+            <div className="w-2 h-2 rounded-full bg-[#FF4700]" />
+            <div className="h-px w-16 bg-gradient-to-r from-[#FF4700] to-transparent" />
+            <div className="w-3 h-3 rounded-full bg-[#FF4700]" />
+            <div className="h-px w-16 bg-gradient-to-l from-[#FF4700] to-transparent" />
+            <div className="w-2 h-2 rounded-full bg-[#FF4700]" />
           </div>
         </div>
       </div>

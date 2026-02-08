@@ -2,7 +2,7 @@ export const palette = {
   blackManga: "#001524",
   seamount: "#15616d",
   delightfulPeach: "#ffecd1",
-  shadeOfAmber: "#ff7d00",
+  shadeOfAmber: "#FF4700",
   temperedChocolate: "#78290f",
 };
 

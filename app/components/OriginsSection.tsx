@@ -14,7 +14,7 @@ export function OriginsSection() {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="mb-16 text-center sm:mb-20"
         >
-          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-[#ffecd1] leading-tight pb-2 overflow-visible">
+          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-[#ffecd1] leading-relaxed pb-2 overflow-visible">
             مــن نـحن؟
           </h2>
         </motion.div>
@@ -34,22 +34,22 @@ export function OriginsSection() {
                 duration: 0.8,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className="group relative overflow-hidden rounded-2xl sm:rounded-3xl border border-[#ffecd1]/10 bg-linear-to-br from-[#001524]/60 to-[#001524]/40 p-6 sm:p-8 backdrop-blur-md transition-all duration-500 hover:border-[#ff7d00]/50 hover:scale-105 hover:shadow-2xl hover:shadow-[#ff7d00]/20"
+              className="group relative overflow-hidden rounded-2xl sm:rounded-3xl border border-[#ffecd1]/10 bg-linear-to-br from-[#001524]/60 to-[#001524]/40 p-6 sm:p-8 backdrop-blur-md transition-all duration-500 hover:border-[#FF4700]/50 hover:scale-105 hover:shadow-2xl hover:shadow-[#FF4700]/20"
             >
               <div
-                className="absolute inset-0 bg-linear-to-br from-[#ff7d00]/0 to-[#ff7d00]/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                className="absolute inset-0 bg-linear-to-br from-[#FF4700]/0 to-[#FF4700]/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                 style={{
-                  background: `linear-gradient(135deg, rgba(255, 125, 0, 0.15) 0%, transparent 100%)`,
+                  background: `linear-gradient(135deg, rgba(255, 71, 0, 0.15) 0%, transparent 100%)`,
                 }}
               />
 
               <div className="relative z-10">
-                <div className="mb-6 inline-flex items-center justify-center rounded-full bg-[#ff7d00]/20 px-4 py-1.5">
-                  <span className="text-xs font-bold text-[#ff7d00]">
+                <div className="mb-6 inline-flex items-center justify-center rounded-full bg-[#FF4700]/20 px-4 py-1.5">
+                  <span className="text-xs font-bold text-[#FF4700]">
                     {block.label}
                   </span>
                 </div>
-                <h3 className="mb-4 text-2xl font-bold leading-tight text-[#ffecd1] sm:text-3xl">
+                <h3 className="mb-4 text-2xl font-bold leading-relaxed text-[#ffecd1] sm:text-3xl">
                   {block.title}
                 </h3>
                 <p className="leading-relaxed text-[#ffecd1]/70">
@@ -57,7 +57,7 @@ export function OriginsSection() {
                 </p>
               </div>
 
-              <div className="absolute -bottom-8 -right-8 h-32 w-32 rounded-full bg-[#ff7d00]/5 blur-2xl transition-all duration-500 group-hover:bg-[#ff7d00]/10 group-hover:scale-150" />
+              <div className="absolute -bottom-8 -right-8 h-32 w-32 rounded-full bg-[#FF4700]/5 blur-2xl transition-all duration-500 group-hover:bg-[#FF4700]/10 group-hover:scale-150" />
             </motion.div>
           ))}
         </div>

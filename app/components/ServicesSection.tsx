@@ -16,7 +16,7 @@ export function ServicesSection() {
   return (
     <section id="services" className="relative py-24 sm:py-32 overflow-hidden">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/3 right-1/3 w-96 h-96 bg-gradient-to-br from-[#ff7d00]/8 to-transparent rounded-full blur-3xl" />
+        <div className="absolute top-1/3 right-1/3 w-96 h-96 bg-gradient-to-br from-[#FF4700]/8 to-transparent rounded-full blur-3xl" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
@@ -28,7 +28,7 @@ export function ServicesSection() {
           className="mb-16 text-center"
         >
           <div className="mb-8 flex justify-center">
-            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#ff7d00] to-[#ff7d00]/50 flex items-center justify-center shadow-lg shadow-[#ff7d00]/30">
+            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#FF4700] to-[#FF4700]/50 flex items-center justify-center shadow-lg shadow-[#FF4700]/30">
               <svg className="w-8 h-8 text-[#001524]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
               </svg>
@@ -51,12 +51,12 @@ export function ServicesSection() {
               whileHover={{ y: -8, scale: 1.02 }}
               className="group relative"
             >
-              <div className="relative overflow-hidden rounded-3xl border border-[#ffecd1]/20 bg-gradient-to-br from-[#001524]/80 to-[#001524]/60 backdrop-blur-xl p-8 h-full transition-all duration-500 hover:border-[#ff7d00]/50 hover:shadow-2xl hover:shadow-[#ff7d00]/20">
-                <div className="mb-5 w-14 h-14 flex items-center justify-center rounded-2xl bg-gradient-to-br from-[#ff7d00]/30 to-[#ff7d00]/10 border border-[#ff7d00]/30 text-[#ff7d00]">
+              <div className="relative overflow-hidden rounded-3xl border border-[#ffecd1]/20 bg-gradient-to-br from-[#001524]/80 to-[#001524]/60 backdrop-blur-xl p-8 h-full transition-all duration-500 hover:border-[#FF4700]/50 hover:shadow-2xl hover:shadow-[#FF4700]/20">
+                <div className="mb-5 w-14 h-14 flex items-center justify-center rounded-2xl bg-gradient-to-br from-[#FF4700]/30 to-[#FF4700]/10 border border-[#FF4700]/30 text-[#FF4700]">
                   {serviceIcons[index]}
                 </div>
 
-                <p className="text-xl font-bold text-[#ffecd1] group-hover:text-[#ff7d00] transition-colors duration-300">
+                <p className="text-xl font-bold text-[#ffecd1] group-hover:text-[#FF4700] transition-colors duration-300">
                   {service}
                 </p>
               </div>

@@ -24,7 +24,7 @@ export function Hero() {
     >
       {/* Simplified Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full opacity-20 blur-3xl bg-gradient-to-br from-[#ff7d00]/30 to-transparent" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full opacity-20 blur-3xl bg-gradient-to-br from-[#FF4700]/30 to-transparent" />
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full opacity-10 blur-3xl bg-gradient-to-br from-[#ff9d33]/20 to-transparent" />
       </div>
 
@@ -40,7 +40,7 @@ export function Hero() {
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
           className="relative w-32 h-40 sm:w-40 sm:h-52 md:w-48 md:h-64 lg:w-56 lg:h-72 rounded-3xl overflow-hidden"
           style={{
-            boxShadow: "0 20px 40px -12px rgba(255, 125, 0, 0.3)",
+            boxShadow: "0 20px 40px -12px rgba(255, 71, 0, 0.3)",
           }}
         >
           <Image
@@ -92,13 +92,13 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-[#ff7d00]/30 mb-8"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-[#FF4700]/30 mb-8"
         >
           <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ff7d00] opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#ff7d00]"></span>
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FF4700] opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#FF4700]"></span>
           </span>
-          <span className="text-sm text-[#ff7d00] font-medium">
+          <span className="text-sm text-[#FF4700] font-medium">
             صنّاع الأثر في العالم الرقمي
           </span>
         </motion.div>
@@ -107,7 +107,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-black mb-6 leading-tight"
+          className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-black mb-6 leading-relaxed"
         >
           <span className="block gradient-text mb-2">نرتّب ظهورك</span>
           <span className="block gradient-text-orange">ونصنع تأثيرك</span>
@@ -136,7 +136,7 @@ export function Hero() {
               e.preventDefault();
               smoothScroll("contact");
             }}
-            className="px-8 py-4 bg-[#ff7d00] text-[#0a0e1a] rounded-full font-bold text-lg transition-all hover:scale-105 hover:shadow-xl hover:shadow-[#ff7d00]/50"
+            className="px-8 py-4 bg-[#FF4700] text-[#0a0e1a] rounded-full font-bold text-lg transition-all hover:scale-105 hover:shadow-xl hover:shadow-[#FF4700]/50"
           >
             ابدأ رحلتك الآن
           </a>
@@ -147,7 +147,7 @@ export function Hero() {
               e.preventDefault();
               smoothScroll("story");
             }}
-            className="px-8 py-4 glass border border-[#ff7d00]/30 text-white rounded-full font-bold text-lg transition-all hover:scale-105 hover:border-[#ff7d00] hover:bg-[#ff7d00]/10"
+            className="px-8 py-4 glass border border-[#FF4700]/30 text-white rounded-full font-bold text-lg transition-all hover:scale-105 hover:border-[#FF4700] hover:bg-[#FF4700]/10"
           >
             اكتشف خدماتنا | قصتنا
           </a>

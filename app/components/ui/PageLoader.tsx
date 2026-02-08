@@ -33,7 +33,7 @@ export function PageLoader() {
               }}
               className="absolute inset-0"
             >
-              <div className="w-32 h-0.5 bg-gradient-to-r from-transparent via-[#ff7d00] to-transparent" />
+              <div className="w-32 h-0.5 bg-gradient-to-r from-transparent via-[#FF4700] to-transparent" />
             </motion.div>
 
             <motion.div
@@ -57,7 +57,7 @@ export function PageLoader() {
                 ease: "easeInOut",
                 times: [0, 0.2, 0.8, 1],
               }}
-              className="w-3 h-3 rounded-full bg-[#ff7d00] mx-auto"
+              className="w-3 h-3 rounded-full bg-[#FF4700] mx-auto"
             />
           </div>
 

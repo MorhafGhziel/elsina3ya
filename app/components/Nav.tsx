@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 const navLinks = [
   { name: "الرئيسية", href: "#hero", id: "hero" },
@@ -95,7 +96,7 @@ export function Nav() {
                   onClick={(e) => handleNavClick(e, link.href)}
                   className={`text-sm transition-colors duration-500 ease-in-out cursor-pointer ${
                     activeSection === link.id
-                      ? "text-[#ff7d00] font-medium"
+                      ? "text-[#FF4700] font-medium"
                       : "text-white/70 hover:text-white"
                   }`}
                 >
@@ -128,9 +129,15 @@ export function Nav() {
             <a
               href="#hero"
               onClick={(e) => handleNavClick(e, "#hero")}
-              className="text-lg font-semibold text-white cursor-pointer"
+              className="cursor-pointer"
             >
-              الصناعية
+              <Image
+                src="/images/snaya_logo2323.png"
+                alt="الصناعية"
+                width={140}
+                height={44}
+                className="h-11 w-auto"
+              />
             </a>
           </div>
         </div>
@@ -177,7 +184,7 @@ export function Nav() {
                   whileHover={{ scale: 1.05, x: 10 }}
                   className={`text-xl transition-colors duration-500 ease-in-out cursor-pointer ${
                     activeSection === link.id
-                      ? "text-[#ff7d00] font-semibold"
+                      ? "text-[#FF4700] font-semibold"
                       : "text-white/80 hover:text-white font-medium"
                   }`}
                 >

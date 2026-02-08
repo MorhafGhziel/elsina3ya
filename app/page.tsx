@@ -19,7 +19,7 @@ export default function Home() {
           className="absolute inset-0"
           style={{
             background: `
-              radial-gradient(circle at 20% 30%, rgba(255, 125, 0, 0.08) 0%, transparent 50%),
+              radial-gradient(circle at 20% 30%, rgba(255, 71, 0, 0.08) 0%, transparent 50%),
               radial-gradient(circle at 80% 70%, rgba(255, 157, 51, 0.06) 0%, transparent 50%),
               linear-gradient(180deg, #050810 0%, #0a0e1a 100%)
             `,
