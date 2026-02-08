@@ -32,7 +32,7 @@ export function ModulesSection() {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="mb-16"
         >
-          <div className="group relative overflow-hidden rounded-2xl sm:rounded-3xl border border-[#ffecd1]/10 bg-linear-to-br from-[#001524]/60 to-[#001524]/40 p-8 sm:p-10 backdrop-blur-md transition-all duration-500 hover:border-[#FF4700]/50 hover:shadow-2xl hover:shadow-[#FF4700]/20">
+          <div className="group relative overflow-hidden rounded-2xl sm:rounded-3xl border border-[#ffecd1]/10 bg-linear-to-br from-[#0a2a40]/60 to-[#0a2a40]/40 p-8 sm:p-10 backdrop-blur-md transition-all duration-500 hover:border-[#FF4700]/50 hover:shadow-2xl hover:shadow-[#FF4700]/20">
             <div
               className="absolute inset-0 bg-linear-to-br from-[#FF4700]/0 to-[#FF4700]/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
               style={{
@@ -43,7 +43,7 @@ export function ModulesSection() {
             <div className="relative z-10">
               <div className="mb-8">
                 <div className="mb-4 inline-block rounded-full bg-[#FF4700] px-5 py-2">
-                  <span className="text-sm font-bold text-[#001524]">للمؤثرين</span>
+                  <span className="text-sm font-bold text-[#0a2a40]">للمؤثرين</span>
                 </div>
                 <h3 className="mb-4 text-3xl font-bold text-[#ffecd1]">
                   خدمات متكاملة لصناع المحتوى
@@ -69,7 +69,7 @@ export function ModulesSection() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: idx * 0.05, duration: 0.5 }}
-                    className="group/item flex items-start gap-3 rounded-xl border border-[#ffecd1]/10 bg-[#001524]/50 p-4 backdrop-blur-sm transition-all duration-300 hover:border-[#FF4700]/50 hover:bg-[#FF4700]/10"
+                    className="group/item flex items-start gap-3 rounded-xl border border-[#ffecd1]/10 bg-[#0a2a40]/50 p-4 backdrop-blur-sm transition-all duration-300 hover:border-[#FF4700]/50 hover:bg-[#FF4700]/10"
                   >
                     <div className="mt-1 h-2 w-2 rounded-full bg-[#FF4700] transition-transform group-hover/item:scale-125" />
                     <p className="text-sm text-[#ffecd1]/90">{service}</p>
@@ -88,7 +88,7 @@ export function ModulesSection() {
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         >
-          <div className="group relative overflow-hidden rounded-2xl sm:rounded-3xl border border-[#ffecd1]/10 bg-linear-to-br from-[#001524]/60 to-[#001524]/40 p-8 sm:p-10 backdrop-blur-md transition-all duration-500 hover:border-[#15616d]/50 hover:shadow-2xl hover:shadow-[#15616d]/20">
+          <div className="group relative overflow-hidden rounded-2xl sm:rounded-3xl border border-[#ffecd1]/10 bg-linear-to-br from-[#0a2a40]/60 to-[#0a2a40]/40 p-8 sm:p-10 backdrop-blur-md transition-all duration-500 hover:border-[#15616d]/50 hover:shadow-2xl hover:shadow-[#15616d]/20">
             <div
               className="absolute inset-0 bg-linear-to-br from-[#15616d]/0 to-[#15616d]/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
               style={{
@@ -125,7 +125,7 @@ export function ModulesSection() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: idx * 0.05, duration: 0.5 }}
-                    className="group/item flex items-start gap-3 rounded-xl border border-[#ffecd1]/10 bg-[#001524]/50 p-4 backdrop-blur-sm transition-all duration-300 hover:border-[#15616d]/50 hover:bg-[#15616d]/10"
+                    className="group/item flex items-start gap-3 rounded-xl border border-[#ffecd1]/10 bg-[#0a2a40]/50 p-4 backdrop-blur-sm transition-all duration-300 hover:border-[#15616d]/50 hover:bg-[#15616d]/10"
                   >
                     <div className="mt-1 h-2 w-2 rounded-full bg-[#15616d] transition-transform group-hover/item:scale-125" />
                     <p className="text-sm text-[#ffecd1]/90">{service}</p>

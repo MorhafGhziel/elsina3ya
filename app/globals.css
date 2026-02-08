@@ -2,8 +2,8 @@
 
 :root {
   /* Orange + White Color Scheme */
-  --clr-dark: #0a0e1a;
-  --clr-darker: #050810;
+  --clr-dark: #0c1220;
+  --clr-darker: #080c14;
   --clr-orange: #FF4700;
   --clr-orange-light: #ff9d33;
   --clr-orange-dark: #ff5c00;
@@ -13,10 +13,10 @@
   --clr-gray-light: #c5cbd6;
   
   /* Surfaces */
-  --surface: #0a0e1a;
-  --surface-alt: #050810;
-  --surface-card: rgba(10, 14, 26, 0.6);
-  --surface-glass: rgba(10, 14, 26, 0.4);
+  --surface: #0c1220;
+  --surface-alt: #080c14;
+  --surface-card: rgba(12, 18, 32, 0.6);
+  --surface-glass: rgba(12, 18, 32, 0.4);
   
   /* Foreground */
   --foreground: #ffffff;
@@ -51,10 +51,7 @@ html {
 body {
   min-height: 100vh;
   margin: 0;
-  background: 
-    radial-gradient(circle at 15% 15%, rgba(255, 71, 0, 0.08), transparent 40%),
-    radial-gradient(circle at 85% 85%, rgba(255, 157, 51, 0.06), transparent 40%),
-    linear-gradient(180deg, #050810 0%, #0a0e1a 100%);
+  background: #080c14;
   color: var(--foreground);
   font-family: var(--font-body);
   overflow-x: hidden;
@@ -99,14 +96,14 @@ body {
 
 /* Glassmorphism utility */
 .glass {
-  background: rgba(10, 14, 26, 0.4);
+  background: rgba(12, 18, 32, 0.5);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .glass-strong {
-  background: rgba(10, 14, 26, 0.7);
+  background: rgba(12, 18, 32, 0.75);
   backdrop-filter: blur(30px);
   -webkit-backdrop-filter: blur(30px);
   border: 1px solid rgba(255, 71, 0, 0.2);
@@ -152,4 +149,19 @@ body {
 
 .border-glow {
   animation: borderGlow 3s ease-in-out infinite;
+}
+
+/* Float animations for Hero */
+@keyframes float-slow {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(30px, -40px) scale(1.05); }
+  50% { transform: translate(-20px, 20px) scale(0.95); }
+  75% { transform: translate(40px, 10px) scale(1.02); }
+}
+
+@keyframes float-slow-reverse {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(-40px, 30px) scale(0.95); }
+  50% { transform: translate(20px, -20px) scale(1.05); }
+  75% { transform: translate(-10px, -40px) scale(0.98); }
 }

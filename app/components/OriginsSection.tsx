@@ -34,7 +34,7 @@ export function OriginsSection() {
                 duration: 0.8,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className="group relative overflow-hidden rounded-2xl sm:rounded-3xl border border-[#ffecd1]/10 bg-linear-to-br from-[#001524]/60 to-[#001524]/40 p-6 sm:p-8 backdrop-blur-md transition-all duration-500 hover:border-[#FF4700]/50 hover:scale-105 hover:shadow-2xl hover:shadow-[#FF4700]/20"
+              className="group relative overflow-hidden rounded-2xl sm:rounded-3xl border border-[#ffecd1]/10 bg-linear-to-br from-[#0a2a40]/60 to-[#0a2a40]/40 p-6 sm:p-8 backdrop-blur-md transition-all duration-500 hover:border-[#FF4700]/50 hover:scale-105 hover:shadow-2xl hover:shadow-[#FF4700]/20"
             >
               <div
                 className="absolute inset-0 bg-linear-to-br from-[#FF4700]/0 to-[#FF4700]/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100"

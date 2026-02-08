@@ -24,7 +24,7 @@ export async function POST(request: NextRequest) {
     }
 
     const emailHtml = `
-      <div dir="rtl" style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #0a0e1a; color: #ffffff;">
+      <div dir="rtl" style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #0c1220; color: #ffffff;">
         <h2 style="color: #FF4700; border-bottom: 2px solid #FF4700; padding-bottom: 10px;">
           رسالة جديدة من موقع الصناعية
         </h2>
@@ -38,7 +38,7 @@ export async function POST(request: NextRequest) {
               : ""
           }
           <p><strong style="color: #FF4700;">الرسالة:</strong></p>
-          <p style="background-color: #001524; padding: 15px; border-radius: 8px; border-right: 3px solid #FF4700;">
+          <p style="background-color: #0a2a40; padding: 15px; border-radius: 8px; border-right: 3px solid #FF4700;">
             ${message.replace(/\n/g, "<br>")}
           </p>
         </div>

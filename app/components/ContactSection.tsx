@@ -17,9 +17,14 @@ export function ContactSection() {
       id="contact"
       className="relative py-32 px-6 lg:px-8 overflow-hidden"
     >
+      {/* Contact — dramatic warm glow bg */}
+      <div className="absolute inset-0 pointer-events-none" style={{
+        background: "linear-gradient(180deg, transparent 0%, rgba(255, 71, 0, 0.04) 15%, rgba(255, 71, 0, 0.06) 50%, rgba(255, 71, 0, 0.04) 85%, transparent 100%)",
+      }} />
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/2 left-1/4 w-96 h-96 rounded-full opacity-15 blur-3xl bg-gradient-to-br from-[#FF4700]/20 to-transparent" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full opacity-10 blur-3xl bg-gradient-to-br from-[#ff9d33]/15 to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#FF4700]/25 to-transparent" />
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[700px] rounded-full bg-[#FF4700]/[0.05] blur-[140px]" />
+        <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] rounded-full bg-[#ff9d33]/[0.03] blur-[100px]" />
       </div>
 
       {/* Person Image 3 - Far Right */}
@@ -45,7 +50,7 @@ export function ContactSection() {
             className="object-cover"
             sizes="(max-width: 640px) 128px, (max-width: 768px) 160px, (max-width: 1024px) 192px, 224px"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0a0e1a]/50 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#080c14]/60 to-transparent" />
         </motion.div>
       </motion.div>
 
@@ -77,7 +82,7 @@ export function ContactSection() {
             className="object-cover"
             sizes="(max-width: 640px) 128px, (max-width: 768px) 160px, (max-width: 1024px) 192px, 224px"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0a0e1a]/50 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#080c14]/60 to-transparent" />
         </motion.div>
       </motion.div>
 
@@ -133,7 +138,7 @@ export function ContactSection() {
                   <p className="text-white font-semibold" dir="ltr">Info@snaya.sa</p>
                 </div>
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#FF4700] to-[#ff9d33] flex items-center justify-center flex-shrink-0">
-                  <svg className="w-6 h-6 text-[#0a0e1a]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <svg className="w-6 h-6 text-[#080c14]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </div>
@@ -149,7 +154,7 @@ export function ContactSection() {
                   <p className="text-white font-semibold" dir="ltr">+966 571 077 778</p>
                 </div>
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#FF4700] to-[#ff9d33] flex items-center justify-center flex-shrink-0">
-                  <svg className="w-6 h-6 text-[#0a0e1a]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <svg className="w-6 h-6 text-[#080c14]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
                 </div>
@@ -164,7 +169,7 @@ export function ContactSection() {
                   <p className="text-white font-semibold">الرياض، المملكة العربية السعودية</p>
                 </div>
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#FF4700] to-[#ff9d33] flex items-center justify-center flex-shrink-0">
-                  <svg className="w-6 h-6 text-[#0a0e1a]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <svg className="w-6 h-6 text-[#080c14]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
@@ -204,7 +209,7 @@ export function ContactSection() {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
-              className="w-full max-w-sm px-10 py-5 bg-gradient-to-r from-[#FF4700] to-[#ff9d33] text-[#0a0e1a] rounded-full font-bold text-lg transition-all hover:shadow-xl hover:shadow-[#FF4700]/50 flex items-center justify-center gap-3"
+              className="w-full max-w-sm px-10 py-5 bg-gradient-to-r from-[#FF4700] to-[#ff9d33] text-[#080c14] rounded-full font-bold text-lg transition-all hover:shadow-xl hover:shadow-[#FF4700]/50 flex items-center justify-center gap-3"
             >
               <span>تواصل عبر الواتساب</span>
               <svg className="w-5 h-5 rtl:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>

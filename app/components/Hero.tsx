@@ -22,10 +22,88 @@ export function Hero() {
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
     >
-      {/* Simplified Background */}
+      {/* Hero-exclusive layered background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full opacity-20 blur-3xl bg-gradient-to-br from-[#FF4700]/30 to-transparent" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full opacity-10 blur-3xl bg-gradient-to-br from-[#ff9d33]/20 to-transparent" />
+        {/* Central aurora bloom */}
+        <div
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] md:w-[1200px] md:h-[1200px]"
+          style={{
+            background: "radial-gradient(circle, rgba(255, 71, 0, 0.12) 0%, rgba(255, 92, 0, 0.06) 25%, rgba(255, 157, 51, 0.02) 50%, transparent 70%)",
+          }}
+        />
+
+        {/* Rotating rays */}
+        <motion.div
+          animate={{ rotate: 360 }}
+          transition={{ duration: 120, repeat: Infinity, ease: "linear" }}
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] md:w-[1400px] md:h-[1400px] opacity-[0.04]"
+          style={{
+            background: "conic-gradient(from 0deg, transparent 0deg, rgba(255,71,0,1) 2deg, transparent 4deg, transparent 30deg, rgba(255,71,0,1) 32deg, transparent 34deg, transparent 60deg, rgba(255,157,51,1) 62deg, transparent 64deg, transparent 90deg, rgba(255,71,0,0.8) 92deg, transparent 94deg, transparent 120deg, rgba(255,157,51,0.6) 122deg, transparent 124deg, transparent 150deg, rgba(255,71,0,1) 152deg, transparent 154deg, transparent 180deg, rgba(255,157,51,0.8) 182deg, transparent 184deg, transparent 210deg, rgba(255,71,0,0.6) 212deg, transparent 214deg, transparent 240deg, rgba(255,157,51,1) 242deg, transparent 244deg, transparent 270deg, rgba(255,71,0,0.8) 272deg, transparent 274deg, transparent 300deg, rgba(255,157,51,0.6) 302deg, transparent 304deg, transparent 330deg, rgba(255,71,0,1) 332deg, transparent 334deg, transparent 360deg)",
+          }}
+        />
+
+        {/* Orbit ring */}
+        <motion.div
+          animate={{ rotate: -360 }}
+          transition={{ duration: 80, repeat: Infinity, ease: "linear" }}
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] md:w-[700px] md:h-[700px] rounded-full border border-[#FF4700]/[0.07]"
+        >
+          <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-[#FF4700]/40 shadow-[0_0_12px_rgba(255,71,0,0.5)]" />
+          <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-[#ff9d33]/30 shadow-[0_0_8px_rgba(255,157,51,0.4)]" />
+        </motion.div>
+
+        {/* Second orbit ring */}
+        <motion.div
+          animate={{ rotate: 360 }}
+          transition={{ duration: 100, repeat: Infinity, ease: "linear" }}
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] md:w-[480px] md:h-[480px] rounded-full border border-white/[0.03]"
+        >
+          <div className="absolute top-1/2 -right-1 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-white/20 shadow-[0_0_8px_rgba(255,255,255,0.3)]" />
+        </motion.div>
+
+        {/* Floating particles */}
+        {[
+          { top: "15%", left: "20%", size: 3, delay: 0, dur: 8 },
+          { top: "25%", left: "75%", size: 2, delay: 2, dur: 10 },
+          { top: "60%", left: "15%", size: 2, delay: 4, dur: 9 },
+          { top: "70%", left: "80%", size: 3, delay: 1, dur: 7 },
+          { top: "40%", left: "90%", size: 2, delay: 3, dur: 11 },
+          { top: "80%", left: "40%", size: 2, delay: 5, dur: 8 },
+          { top: "10%", left: "50%", size: 2, delay: 2, dur: 12 },
+          { top: "50%", left: "5%", size: 3, delay: 6, dur: 9 },
+        ].map((p, i) => (
+          <motion.div
+            key={i}
+            className="absolute rounded-full bg-[#FF4700]"
+            style={{
+              top: p.top,
+              left: p.left,
+              width: p.size,
+              height: p.size,
+            }}
+            animate={{
+              y: [0, -30, 0],
+              opacity: [0.15, 0.4, 0.15],
+            }}
+            transition={{
+              duration: p.dur,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: p.delay,
+            }}
+          />
+        ))}
+
+        {/* Horizontal light streak */}
+        <motion.div
+          initial={{ x: "-100%", opacity: 0 }}
+          animate={{ x: "200%", opacity: [0, 0.6, 0] }}
+          transition={{ duration: 4, repeat: Infinity, repeatDelay: 8, ease: "easeInOut" }}
+          className="absolute top-[45%] w-[300px] h-[1px]"
+          style={{
+            background: "linear-gradient(90deg, transparent, rgba(255,71,0,0.4), transparent)",
+          }}
+        />
       </div>
 
       {/* Person Image 1 - Top Right */}
@@ -51,7 +129,7 @@ export function Hero() {
             sizes="(max-width: 640px) 128px, (max-width: 768px) 160px, (max-width: 1024px) 192px, 224px"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0a0e1a]/50 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#080c14]/60 to-transparent" />
         </motion.div>
       </motion.div>
 
@@ -83,7 +161,7 @@ export function Hero() {
             sizes="(max-width: 640px) 128px, (max-width: 768px) 160px, (max-width: 1024px) 192px, 224px"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0a0e1a]/50 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#080c14]/60 to-transparent" />
         </motion.div>
       </motion.div>
 
@@ -136,7 +214,7 @@ export function Hero() {
               e.preventDefault();
               smoothScroll("contact");
             }}
-            className="px-8 py-4 bg-[#FF4700] text-[#0a0e1a] rounded-full font-bold text-lg transition-all hover:scale-105 hover:shadow-xl hover:shadow-[#FF4700]/50"
+            className="px-8 py-4 bg-[#FF4700] text-[#080c14] rounded-full font-bold text-lg transition-all hover:scale-105 hover:shadow-xl hover:shadow-[#FF4700]/50"
           >
             ابدأ رحلتك الآن
           </a>
@@ -153,8 +231,6 @@ export function Hero() {
           </a>
         </motion.div>
       </div>
-
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-linear-to-t from-[#0a0e1a] to-transparent pointer-events-none" />
     </section>
   );
 }

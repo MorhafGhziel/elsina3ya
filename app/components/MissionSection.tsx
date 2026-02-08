@@ -26,7 +26,7 @@ export function MissionSection() {
           <div className="mb-8 flex justify-center">
             <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#FF4700] to-[#FF4700]/50 flex items-center justify-center shadow-lg shadow-[#FF4700]/30">
               <svg
-                className="w-8 h-8 text-[#001524]"
+                className="w-8 h-8 text-[#0a2a40]"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -103,7 +103,7 @@ export function MissionSection() {
                 whileHover={{ y: -10, scale: 1.02 }}
                 className="group relative"
               >
-                <div className="relative overflow-hidden rounded-3xl border border-[#ffecd1]/20 bg-gradient-to-br from-[#001524]/80 to-[#001524]/60 backdrop-blur-xl p-8 h-full transition-all duration-500 hover:border-[#FF4700]/50 hover:shadow-2xl hover:shadow-[#FF4700]/20">
+                <div className="relative overflow-hidden rounded-3xl border border-[#ffecd1]/20 bg-gradient-to-br from-[#0a2a40]/80 to-[#0a2a40]/60 backdrop-blur-xl p-8 h-full transition-all duration-500 hover:border-[#FF4700]/50 hover:shadow-2xl hover:shadow-[#FF4700]/20">
                   {/* Number Badge */}
                   <div className="absolute top-4 left-4 w-10 h-10 rounded-full bg-[#FF4700]/20 border border-[#FF4700]/50 flex items-center justify-center">
                     <span className="text-[#FF4700] font-bold">

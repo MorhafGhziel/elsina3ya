@@ -37,7 +37,7 @@ export function StorySection() {
             className="group relative"
           >
             {/* Main Content Card */}
-            <div className="relative overflow-hidden rounded-3xl border border-[#ffecd1]/20 bg-gradient-to-br from-[#001524]/80 to-[#001524]/60 backdrop-blur-xl">
+            <div className="relative overflow-hidden rounded-3xl border border-[#ffecd1]/20 bg-gradient-to-br from-[#0a2a40]/80 to-[#0a2a40]/60 backdrop-blur-xl">
               {/* Decorative Corner Accents */}
               <div className="absolute top-0 left-0 w-32 h-32 border-t-2 border-l-2 border-[#FF4700]/30 rounded-tl-3xl" />
               <div className="absolute bottom-0 right-0 w-32 h-32 border-b-2 border-r-2 border-[#FF4700]/30 rounded-br-3xl" />

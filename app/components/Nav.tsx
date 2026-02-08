@@ -84,7 +84,7 @@ export function Nav() {
           <div
             className={`flex items-center justify-between rounded-full transition-all duration-300 ${
               isScrolled
-                ? "bg-[#0a0e1a]/95 backdrop-blur-md px-6 py-3"
+                ? "bg-[#0c1220]/90 backdrop-blur-md px-6 py-3"
                 : "px-0 py-0"
             }`}
           >
@@ -157,7 +157,7 @@ export function Nav() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="absolute inset-0 bg-[#0a0e1a]/95 backdrop-blur-sm"
+              className="absolute inset-0 bg-[#0c1220]/90 backdrop-blur-sm"
               onClick={() => setIsMobileMenuOpen(false)}
             />
 

@@ -1,5 +1,5 @@
 export const palette = {
-  blackManga: "#001524",
+  blackManga: "#0a2a40",
   seamount: "#15616d",
   delightfulPeach: "#ffecd1",
   shadeOfAmber: "#FF4700",

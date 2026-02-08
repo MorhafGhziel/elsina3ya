@@ -29,9 +29,14 @@ const valueIcons = [
 export function ValuesSection() {
   return (
     <section id="values" className="relative py-24 sm:py-32 overflow-hidden">
-      {/* Simplified Background */}
+      {/* Values — subtle cool surface */}
+      <div className="absolute inset-0 pointer-events-none" style={{
+        background: "linear-gradient(180deg, transparent 0%, rgba(16, 24, 42, 0.6) 20%, rgba(16, 24, 42, 0.8) 50%, rgba(16, 24, 42, 0.6) 80%, transparent 100%)",
+      }} />
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-[#FF4700]/10 to-transparent rounded-full blur-3xl" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/[0.04] to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/[0.04] to-transparent" />
+        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full bg-[#FF4700]/[0.04] blur-[120px]" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
@@ -46,7 +51,7 @@ export function ValuesSection() {
           {/* Diamond Icon */}
           <div className="mb-8 flex justify-center">
             <div className="w-16 h-16 bg-gradient-to-br from-[#FF4700] to-[#FF4700]/50 transform rotate-45 shadow-lg shadow-[#FF4700]/30">
-              <div className="absolute inset-2 bg-[#001524] transform" />
+              <div className="absolute inset-2 bg-[#0a2a40] transform" />
             </div>
           </div>
 
@@ -81,7 +86,7 @@ export function ValuesSection() {
               style={{ perspective: '1000px' }}
               className="group relative"
             >
-              <div className="relative overflow-hidden rounded-3xl border-2 border-[#ffecd1]/20 bg-gradient-to-br from-[#001524]/90 to-[#001524]/70 backdrop-blur-xl p-8 h-full transition-all duration-500 hover:border-[#FF4700]/60 hover:shadow-2xl hover:shadow-[#FF4700]/30">
+              <div className="relative overflow-hidden rounded-3xl border-2 border-[#ffecd1]/20 bg-gradient-to-br from-[#0a2a40]/90 to-[#0a2a40]/70 backdrop-blur-xl p-8 h-full transition-all duration-500 hover:border-[#FF4700]/60 hover:shadow-2xl hover:shadow-[#FF4700]/30">
 
                 <div className="relative z-10">
                   {/* Icon Container */}
@@ -91,7 +96,7 @@ export function ValuesSection() {
                     </div>
                     
                     {/* Number Badge */}
-                    <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-[#FF4700] text-[#001524] flex items-center justify-center font-bold text-sm shadow-lg">
+                    <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-[#FF4700] text-[#0a2a40] flex items-center justify-center font-bold text-sm shadow-lg">
                       {index + 1}
                     </div>
                   </div>
