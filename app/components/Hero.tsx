@@ -159,23 +159,16 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Marquee scrolling text strip — seamless infinite loop */}
-      <div className="relative z-10 bg-[#FF4800] py-3 overflow-hidden" dir="ltr">
+      {/* Marquee arrow strip — seamless infinite loop */}
+      <div className="relative z-10 bg-[#FF4800] py-2 overflow-hidden" dir="ltr">
         <div
-          className="inline-flex whitespace-nowrap"
-          style={{ animation: "marquee 25s linear infinite" }}
+          className="inline-flex items-center"
+          style={{ animation: "marquee 15s linear infinite" }}
         >
           {[0, 1].map((half) => (
             <span key={half} className="inline-flex items-center shrink-0">
-              {Array.from({ length: 10 }).map((_, i) => (
-                <span key={i} className="text-[#111111] font-bold text-lg mx-6">
-                  نصقل الموهبة
-                  <span className="inline-block mx-3 opacity-50">&#x25C6;</span>
-                  نصنع الأثر
-                  <span className="inline-block mx-3 opacity-50">&#x25C6;</span>
-                  نوصل النقاط
-                  <span className="inline-block mx-3 opacity-50">&#x25C6;</span>
-                </span>
+              {Array.from({ length: 40 }).map((_, i) => (
+                <Image key={i} src="/images/arrow.png" alt="" width={24} height={24} className="mx-3 invert" />
               ))}
             </span>
           ))}
