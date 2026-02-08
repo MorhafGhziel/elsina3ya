@@ -21,7 +21,7 @@ export function PageLoader() {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
-          className="fixed inset-0 z-[9999] flex items-center justify-center bg-[#080c14]"
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-[#111111]"
         >
           <div className="relative">
             <motion.div
@@ -33,7 +33,7 @@ export function PageLoader() {
               }}
               className="absolute inset-0"
             >
-              <div className="w-32 h-0.5 bg-gradient-to-r from-transparent via-[#FF4700] to-transparent" />
+              <div className="w-32 h-0.5 bg-gradient-to-r from-transparent via-[#FF4800] to-transparent" />
             </motion.div>
 
             <motion.div
@@ -46,7 +46,7 @@ export function PageLoader() {
               }}
               className="absolute inset-0"
             >
-              <div className="w-32 h-0.5 bg-gradient-to-r from-transparent via-[#ff9d33] to-transparent" />
+              <div className="w-32 h-0.5 bg-gradient-to-r from-transparent via-[#ff7a33] to-transparent" />
             </motion.div>
 
             <motion.div
@@ -57,7 +57,7 @@ export function PageLoader() {
                 ease: "easeInOut",
                 times: [0, 0.2, 0.8, 1],
               }}
-              className="w-3 h-3 rounded-full bg-[#FF4700] mx-auto"
+              className="w-3 h-3 rounded-full bg-[#FF4800] mx-auto"
             />
           </div>
 
@@ -69,7 +69,7 @@ export function PageLoader() {
               ease: "easeInOut",
               delay: 0.3,
             }}
-            className="absolute bottom-32 text-[#ffecd1] text-sm font-medium tracking-wider"
+            className="absolute bottom-32 text-[#FFF6F3] text-sm font-medium tracking-wider"
           >
             الصناعية
           </motion.div>
@@ -78,4 +78,3 @@ export function PageLoader() {
     </AnimatePresence>
   );
 }
-

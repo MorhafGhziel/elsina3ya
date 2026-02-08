@@ -82,10 +82,10 @@ export function Nav() {
       <nav className="fixed top-0 left-0 right-0 z-50 py-4">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div
-            className={`flex items-center justify-between rounded-full transition-all duration-300 ${
+            className={`flex items-center justify-between rounded-full border transition-all duration-300 ${
               isScrolled
-                ? "bg-[#0c1220]/90 backdrop-blur-md px-6 py-3"
-                : "px-0 py-0"
+                ? "bg-[#111111]/95 backdrop-blur-md px-6 py-3 border-[#FF4800]/10"
+                : "px-0 py-0 border-transparent"
             }`}
           >
             <div className="hidden lg:flex items-center gap-6">
@@ -96,8 +96,8 @@ export function Nav() {
                   onClick={(e) => handleNavClick(e, link.href)}
                   className={`text-sm transition-colors duration-500 ease-in-out cursor-pointer ${
                     activeSection === link.id
-                      ? "text-[#FF4700] font-medium"
-                      : "text-white/70 hover:text-white"
+                      ? "text-[#FF4800] font-medium"
+                      : "text-[#FFF6F3]/70 hover:text-[#FFF6F3]"
                   }`}
                 >
                   {link.name}
@@ -110,17 +110,17 @@ export function Nav() {
               className="lg:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5"
             >
               <span
-                className={`w-6 h-0.5 bg-white transition-all ${
+                className={`w-6 h-0.5 bg-[#FFF6F3] transition-all ${
                   isMobileMenuOpen ? "rotate-45 translate-y-2" : ""
                 }`}
               />
               <span
-                className={`w-6 h-0.5 bg-white transition-all ${
+                className={`w-6 h-0.5 bg-[#FFF6F3] transition-all ${
                   isMobileMenuOpen ? "opacity-0" : ""
                 }`}
               />
               <span
-                className={`w-6 h-0.5 bg-white transition-all ${
+                className={`w-6 h-0.5 bg-[#FFF6F3] transition-all ${
                   isMobileMenuOpen ? "-rotate-45 -translate-y-2" : ""
                 }`}
               />
@@ -157,7 +157,7 @@ export function Nav() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="absolute inset-0 bg-[#0c1220]/90 backdrop-blur-sm"
+              className="absolute inset-0 bg-[#111111]/95 backdrop-blur-sm"
               onClick={() => setIsMobileMenuOpen(false)}
             />
 
@@ -184,8 +184,8 @@ export function Nav() {
                   whileHover={{ scale: 1.05, x: 10 }}
                   className={`text-xl transition-colors duration-500 ease-in-out cursor-pointer ${
                     activeSection === link.id
-                      ? "text-[#FF4700] font-semibold"
-                      : "text-white/80 hover:text-white font-medium"
+                      ? "text-[#FF4800] font-semibold"
+                      : "text-[#FFF6F3]/80 hover:text-[#FFF6F3] font-medium"
                   }`}
                 >
                   {link.name}

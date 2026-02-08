@@ -1,9 +1,9 @@
 export const palette = {
-  blackManga: "#0a2a40",
-  seamount: "#15616d",
-  delightfulPeach: "#ffecd1",
-  shadeOfAmber: "#FF4700",
-  temperedChocolate: "#78290f",
+  dark: "#111111",
+  darkAlt: "#1a1a1a",
+  light: "#FFF6F3",
+  orange: "#FF4800",
+  yellow: "#FEFF02",
 };
 
 export const missionBlocks = [

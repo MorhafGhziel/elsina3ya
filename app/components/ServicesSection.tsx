@@ -14,18 +14,7 @@ const serviceIcons = [
 
 export function ServicesSection() {
   return (
-    <section id="services" className="relative py-24 sm:py-32 overflow-hidden">
-      {/* Services — dark elevated panel with cool accent */}
-      <div className="absolute inset-0 pointer-events-none" style={{
-        background: "linear-gradient(135deg, rgba(12, 18, 32, 0.9) 0%, rgba(8, 14, 26, 0.95) 50%, rgba(12, 18, 32, 0.9) 100%)",
-      }} />
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
-        <div className="absolute -top-20 -right-20 w-[500px] h-[500px] rounded-full bg-[#FF4700]/[0.04] blur-[100px]" />
-        <div className="absolute -bottom-20 -left-20 w-[400px] h-[400px] rounded-full bg-[#ff9d33]/[0.03] blur-[100px]" />
-      </div>
-
+    <section id="services" className="relative py-24 sm:py-32 overflow-hidden bg-[#111111] grain-overlay">
       <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -34,15 +23,16 @@ export function ServicesSection() {
           transition={{ duration: 0.8 }}
           className="mb-16 text-center"
         >
+          {/* Gear Icon */}
           <div className="mb-8 flex justify-center">
-            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#FF4700] to-[#FF4700]/50 flex items-center justify-center shadow-lg shadow-[#FF4700]/30">
-              <svg className="w-8 h-8 text-[#0a2a40]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div className="w-16 h-16 rounded-full bg-[#FF4800] flex items-center justify-center">
+              <svg className="w-8 h-8 text-[#111111]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
               </svg>
             </div>
           </div>
 
-          <h2 className="text-5xl sm:text-6xl lg:text-8xl font-bold text-[#ffecd1] mb-6">
+          <h2 className="text-5xl sm:text-6xl lg:text-8xl font-bold text-[#FFF6F3] mb-6">
             خدماتنا
           </h2>
         </motion.div>
@@ -58,14 +48,20 @@ export function ServicesSection() {
               whileHover={{ y: -8, scale: 1.02 }}
               className="group relative"
             >
-              <div className="relative overflow-hidden rounded-3xl border border-[#ffecd1]/20 bg-gradient-to-br from-[#0a2a40]/80 to-[#0a2a40]/60 backdrop-blur-xl p-8 h-full transition-all duration-500 hover:border-[#FF4700]/50 hover:shadow-2xl hover:shadow-[#FF4700]/20">
-                <div className="mb-5 w-14 h-14 flex items-center justify-center rounded-2xl bg-gradient-to-br from-[#FF4700]/30 to-[#FF4700]/10 border border-[#FF4700]/30 text-[#FF4700]">
-                  {serviceIcons[index]}
-                </div>
+              {/* Industrial card treatment */}
+              <div className="relative overflow-hidden rounded-2xl bg-[#1a1a1a] border border-[#FF4800]/15 h-full transition-all duration-500 hover:border-[#FF4800]/50 hover:shadow-2xl hover:shadow-[#FF4800]/10">
+                {/* Hazard stripe top */}
+                <div className="hazard-tape-thin" />
 
-                <p className="text-xl font-bold text-[#ffecd1] group-hover:text-[#FF4700] transition-colors duration-300">
-                  {service}
-                </p>
+                <div className="p-8">
+                  <div className="mb-5 w-14 h-14 flex items-center justify-center rounded-xl bg-[#FF4800]/15 border border-[#FF4800]/25 text-[#FF4800]">
+                    {serviceIcons[index]}
+                  </div>
+
+                  <p className="text-xl font-bold text-[#FFF6F3] group-hover:text-[#FF4800] transition-colors duration-300">
+                    {service}
+                  </p>
+                </div>
               </div>
             </motion.div>
           ))}

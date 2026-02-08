@@ -11,18 +11,8 @@ import { PageLoader } from "./components/ui/PageLoader";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen overflow-x-hidden">
+    <div className="relative min-h-screen overflow-x-hidden bg-[#111111]">
       <PageLoader />
-
-      {/* Clean layout background */}
-      <div className="fixed inset-0 -z-20 overflow-hidden">
-        <div
-          className="absolute inset-0"
-          style={{
-            background: `linear-gradient(160deg, #060a12 0%, #0a1018 40%, #0c1220 100%)`,
-          }}
-        />
-      </div>
 
       <main className="relative z-10">
         <Nav />
