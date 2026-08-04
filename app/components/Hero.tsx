@@ -110,9 +110,8 @@ export function Hero() {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="text-lg md:text-xl lg:text-2xl text-[#FFF6F3]/80 max-w-3xl mx-auto mb-12 leading-relaxed drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]"
             >
-              في الصناعية، نجمع صنّاع المحتوى والمؤثرين في ورشة احترافية واحدة،
-              ننظّم حضورهم الرقمي، ونربطهم بالعلامات التجارية المناسبة؛ لصناعة تأثير
-              حقيقي ومستدام
+              في الصناعية، نشتغل على كل ما يصنع حضور العلامة التجارية، من الفكرة
+              الأولى إلى تنفيذ الحملات وصناعة الأثر.
             </motion.p>
 
             <motion.div
