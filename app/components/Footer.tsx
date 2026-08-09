@@ -149,7 +149,7 @@ export function Footer() {
                 </span>
               </li>
               <li className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-[#FF4800]/10 border border-[#FF4800]/30 rounded flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 bg-[#FF4800]/10 border border-[#FF4800]/30 rounded flex items-center justify-center shrink-0">
                   <svg
                     className="w-5 h-5 text-[#FF4800]"
                     fill="none"
