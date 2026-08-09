@@ -90,7 +90,7 @@ export function Hero() {
                 نرتّب ظهورك
               </span>
               <span
-                className="block relative inline-block"
+                className=" relative inline-block"
                 style={{
                   background:
                     "linear-gradient(180deg, #FF4800 0%, #ff6a28 50%, #FF4800 100%)",
