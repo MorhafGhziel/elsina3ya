@@ -16,8 +16,6 @@ const smoothScroll = (id: string) => {
   }
 };
 
-const marqueeText = "نصقل الموهبة . نصنع الأثر . نوصل النقاط . ";
-
 export function Hero() {
   return (
     <section
@@ -37,7 +35,8 @@ export function Hero() {
         <div
           className="absolute inset-0"
           style={{
-            background: "linear-gradient(180deg, rgba(255, 72, 0, 0.35) 0%, rgba(17, 17, 17, 0.85) 70%, #111111 100%)",
+            background:
+              "linear-gradient(180deg, rgba(255, 72, 0, 0.35) 0%, rgba(17, 17, 17, 0.85) 70%, #111111 100%)",
             mixBlendMode: "multiply",
           }}
         />
@@ -93,7 +92,8 @@ export function Hero() {
               <span
                 className="block relative inline-block"
                 style={{
-                  background: "linear-gradient(180deg, #FF4800 0%, #ff6a28 50%, #FF4800 100%)",
+                  background:
+                    "linear-gradient(180deg, #FF4800 0%, #ff6a28 50%, #FF4800 100%)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text",
@@ -159,7 +159,10 @@ export function Hero() {
       </div>
 
       {/* Marquee arrow strip — seamless infinite loop */}
-      <div className="relative z-10 bg-[#FF4800] py-2 overflow-hidden" dir="ltr">
+      <div
+        className="relative z-10 bg-[#FF4800] py-2 overflow-hidden"
+        dir="ltr"
+      >
         <div
           className="inline-flex items-center"
           style={{ animation: "marquee 15s linear infinite" }}
@@ -167,7 +170,14 @@ export function Hero() {
           {[0, 1].map((half) => (
             <span key={half} className="inline-flex items-center shrink-0">
               {Array.from({ length: 40 }).map((_, i) => (
-                <Image key={i} src="/images/arrow.png" alt="" width={24} height={24} className="mx-3 invert" />
+                <Image
+                  key={i}
+                  src="/images/arrow.png"
+                  alt=""
+                  width={24}
+                  height={24}
+                  className="mx-3 invert"
+                />
               ))}
             </span>
           ))}
