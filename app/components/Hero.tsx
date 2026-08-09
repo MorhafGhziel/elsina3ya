@@ -168,17 +168,13 @@ export function Hero() {
           style={{ animation: "marquee 15s linear infinite" }}
         >
           {[0, 1].map((half) => (
-            <span key={half} className="inline-flex items-center shrink-0">
-              {Array.from({ length: 40 }).map((_, i) => (
-                <Image
-                  key={i}
-                  src="/images/arrow.png"
-                  alt=""
-                  width={24}
-                  height={24}
-                  className="mx-3 invert"
-                />
-              ))}
+            <span
+              key={half}
+              className="inline-flex items-center shrink-0 text-orange-700 text-2xl font-bold"
+            >
+              {Array.from({ length: 40 }).map(
+                (_, i) => "   <<    <<    <<    <<    ",
+              )}
             </span>
           ))}
         </div>
