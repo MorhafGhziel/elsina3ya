@@ -1,30 +1,41 @@
-import { Hero } from "./components/Hero";
-import { StorySection } from "./components/StorySection";
-import { VisionSection } from "./components/VisionSection";
-import { MissionSection } from "./components/MissionSection";
-import { ServicesSection } from "./components/ServicesSection";
-import { ValuesSection } from "./components/ValuesSection";
-import { ContactSection } from "./components/ContactSection";
-import { Nav } from "./components/Nav";
-import { Footer } from "./components/Footer";
-import { PageLoader } from "./components/ui/PageLoader";
+import { About } from "./sections/About";
+import { Contact } from "./sections/Contact";
+import { Footer } from "./sections/Footer";
+import { Hero } from "./sections/Hero";
+import { ImpactBand } from "./sections/ImpactBand";
+import { Nav } from "./sections/Nav";
+import { Offer } from "./sections/Offer";
+import { Process } from "./sections/Process";
+import { Roster } from "./sections/Roster";
+import { Services } from "./sections/Services";
+import { Values } from "./sections/Values";
+import { Vision } from "./sections/Vision";
+import { Cursor } from "./ui/Cursor";
+import { Preloader } from "./ui/Preloader";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen overflow-x-hidden bg-[#111111]">
-      <PageLoader />
+    <>
+      <Preloader />
+      <Cursor />
+      <span className="grain" aria-hidden />
 
-      <main className="relative z-10">
-        <Nav />
+      <Nav />
+
+      <main>
         <Hero />
-        <StorySection />
-        <VisionSection />
-        <MissionSection />
-        <ServicesSection />
-        <ValuesSection />
-        <ContactSection />
-        <Footer />
+        <About />
+        <Vision />
+        <Process />
+        <Services />
+        <Offer />
+        <Values />
+        <Roster />
+        <ImpactBand />
+        <Contact />
       </main>
-    </div>
+
+      <Footer />
+    </>
   );
 }

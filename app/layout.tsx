@@ -1,29 +1,70 @@
-import type { Metadata } from "next";
-import localFont from "next/font/local";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
-import { SmoothScroll } from "./components/SmoothScroll";
-
-const ibmPlexArabic = localFont({
-  src: "../public/fonts/IBMPlexSansArabic-SemiBold.ttf",
-  variable: "--font-ibm-plex-arabic",
-});
+import { site } from "./lib/content";
+import { SmoothScroll } from "./ui/SmoothScroll";
 
 export const metadata: Metadata = {
-  title: "الصناعية",
-  description:
-    "نجمع صنّاع المحتوى في ورشة واحدة، ننظّم ظهورهم، ونربطهم بالعلامات التجارية المناسبة. إدارة مواهب، إنتاج محتوى، وتسويق رقمي احترافي.",
+  metadataBase: new URL(site.url),
+  title: {
+    default: `${site.name} — ${site.tagline}`,
+    template: `%s | ${site.name}`,
+  },
+  description: site.description,
+  keywords: [
+    "الصناعية",
+    "وكالة مؤثرين",
+    "إدارة صناع المحتوى",
+    "التسويق عبر المؤثرين",
+    "إنتاج محتوى",
+    "الرياض",
+  ],
+  openGraph: {
+    type: "website",
+    locale: "ar_SA",
+    siteName: site.name,
+    title: `${site.name} — ${site.tagline}`,
+    description: site.description,
+    images: [{ url: "/images/hero.jpeg", width: 1200, height: 630, alt: site.name }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${site.name} — ${site.tagline}`,
+    description: site.description,
+    images: ["/images/hero.jpeg"],
+  },
+  robots: { index: true, follow: true },
 };
+
+export const viewport: Viewport = {
+  themeColor: "#0C0C0C",
+  colorScheme: "dark",
+};
+
+/** Only the faces used above the fold — everything else loads on demand. */
+const preloadedFonts = [
+  "/fonts/PlexAr-400-arabic.woff2",
+  "/fonts/PlexAr-700-arabic.woff2",
+  "/fonts/RobotoCond-var.woff2",
+];
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="ar" dir="rtl">
-      <body
-        className={`${ibmPlexArabic.className} antialiased`}
-      >
+      <head>
+        {preloadedFonts.map((href) => (
+          <link
+            key={href}
+            rel="preload"
+            href={href}
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
+          />
+        ))}
+      </head>
+      <body>
         <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>
