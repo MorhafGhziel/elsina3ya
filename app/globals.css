@@ -1,91 +1,264 @@
 @import "tailwindcss";
 
-:root {
-  /* Industrial Brand Colors */
-  --clr-dark: #111111;
-  --clr-darker: #0a0a0a;
-  --clr-orange: #FF4800;
-  --clr-orange-light: #ff7a33;
-  --clr-orange-dark: #e04000;
-  --clr-yellow: #FEFF02;
-  --clr-white: #ffffff;
-  --clr-white-soft: #FFF6F3;
-  --clr-gray: #999999;
-  --clr-gray-light: #cccccc;
+/* ==========================================================================
+   ALSINAIYAH — INDUSTRIAL EDITORIAL DESIGN SYSTEM
+   Black + safety orange. Hairlines, hard cuts, technical type.
+   ========================================================================== */
 
-  /* Surfaces */
-  --surface: #111111;
-  --surface-alt: #0a0a0a;
-  --surface-light: #FFF6F3;
-  --surface-card: rgba(17, 17, 17, 0.6);
-  --surface-glass: rgba(17, 17, 17, 0.4);
+/* ---------- Typefaces ------------------------------------------------- */
+@font-face { font-family: "Plex Arabic"; font-weight: 300; font-display: swap; src: url("/fonts/PlexAr-300-latin.woff2") format("woff2");  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2122, U+2212, U+FEFF, U+FFFD; }
+@font-face { font-family: "Plex Arabic"; font-weight: 300; font-display: swap; src: url("/fonts/PlexAr-300-arabic.woff2") format("woff2"); unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0898-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+FB50-FDFF, U+FE70-FEFF; }
+@font-face { font-family: "Plex Arabic"; font-weight: 400; font-display: swap; src: url("/fonts/PlexAr-400-latin.woff2") format("woff2");  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2122, U+2212, U+FEFF, U+FFFD; }
+@font-face { font-family: "Plex Arabic"; font-weight: 400; font-display: swap; src: url("/fonts/PlexAr-400-arabic.woff2") format("woff2"); unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0898-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+FB50-FDFF, U+FE70-FEFF; }
+@font-face { font-family: "Plex Arabic"; font-weight: 500; font-display: swap; src: url("/fonts/PlexAr-500-latin.woff2") format("woff2");  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2122, U+2212, U+FEFF, U+FFFD; }
+@font-face { font-family: "Plex Arabic"; font-weight: 500; font-display: swap; src: url("/fonts/PlexAr-500-arabic.woff2") format("woff2"); unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0898-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+FB50-FDFF, U+FE70-FEFF; }
+@font-face { font-family: "Plex Arabic"; font-weight: 600; font-display: swap; src: url("/fonts/PlexAr-600-latin.woff2") format("woff2");  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2122, U+2212, U+FEFF, U+FFFD; }
+@font-face { font-family: "Plex Arabic"; font-weight: 600; font-display: swap; src: url("/fonts/PlexAr-600-arabic.woff2") format("woff2"); unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0898-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+FB50-FDFF, U+FE70-FEFF; }
+@font-face { font-family: "Plex Arabic"; font-weight: 700; font-display: swap; src: url("/fonts/PlexAr-700-latin.woff2") format("woff2");  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2122, U+2212, U+FEFF, U+FFFD; }
+@font-face { font-family: "Plex Arabic"; font-weight: 700; font-display: swap; src: url("/fonts/PlexAr-700-arabic.woff2") format("woff2"); unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0898-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+FB50-FDFF, U+FE70-FEFF; }
 
-  /* Foreground */
-  --foreground: #ffffff;
-  --foreground-alt: #FFF6F3;
-  --foreground-muted: #999999;
-
-  /* Accent */
-  --accent: #FF4800;
-  --accent-light: #ff7a33;
-  --accent-glow: rgba(255, 72, 0, 0.3);
-
-  /* Font */
-  --font-body: var(--font-ibm-plex-arabic), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+/* Roboto Condensed is the brand's Latin face (per the identity manual). */
+@font-face {
+  font-family: "Brand Condensed";
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/fonts/RobotoCond-var.woff2") format("woff2-variations");
 }
 
+/* ---------- Tokens ---------------------------------------------------- */
 @theme {
-  --color-background: var(--surface);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-ibm-plex-arabic);
-  --font-mono: var(--font-ibm-plex-arabic);
+  /* Surfaces */
+  --color-ink:        #0C0C0C;
+  --color-ink-2:      #141414;
+  --color-ink-3:      #1C1C1C;
+  --color-paper:      #FFF6F3;
+  --color-paper-2:    #F0E7E2;
+
+  /* Brand — exact values from the identity manual */
+  --color-flare:      #FF4800;  /* PANTONE 1655 C */
+  --color-flare-dim:  #C43700;
+  --color-volt:       #FEFF02;  /* PANTONE 395 C — used sparingly, one hit per view */
+
+  /* Type on dark / light */
+  --color-bone:       #FFF6F3;
+  --color-soot:       #0C0C0C;
+
+  /* Hairlines */
+  --color-rule-dark:  rgba(255, 246, 243, 0.14);
+  --color-rule-light: rgba(12, 12, 12, 0.14);
+
+  --font-sans: "Plex Arabic", ui-sans-serif, system-ui, sans-serif;
+  --font-cond: "Brand Condensed", "Arial Narrow", system-ui, sans-serif;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-* {
-  box-sizing: border-box;
-  scroll-behavior: smooth;
+:root {
+  --gutter: clamp(1.25rem, 4vw, 4.5rem);
+  --shell: 96rem;
 }
 
-html {
-  scroll-padding-top: 100px;
-}
+/* ---------- Base ------------------------------------------------------ */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
 
 body {
-  min-height: 100vh;
   margin: 0;
-  background: #111111;
-  color: var(--foreground);
-  font-family: var(--font-body);
-  overflow-x: hidden;
+  background: var(--color-ink);
+  color: var(--color-bone);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-synthesis-weight: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
 }
 
+/* Lenis owns the scroll */
+html.lenis,
+html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: hidden; }
 
-::selection {
-  background: rgba(255, 72, 0, 0.3);
-  color: #ffffff;
+::selection { background: var(--color-flare); color: #0C0C0C; }
+
+:focus-visible {
+  outline: 2px solid var(--color-flare);
+  outline-offset: 3px;
 }
 
-/* Smooth scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #0C0C0C; }
+::-webkit-scrollbar-thumb { background: #2A2A2A; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-flare); }
+
+img { max-width: 100%; }
+
+/* ---------- Layout ---------------------------------------------------- */
+.shell {
+  width: 100%;
+  max-width: var(--shell);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
 }
 
-::-webkit-scrollbar-track {
-  background: #0a0a0a;
+/* ---------- Type ------------------------------------------------------ */
+.display {
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+.display-xl { font-size: clamp(2.75rem, 10.5vw, 10rem); }
+.display-lg { font-size: clamp(2.25rem, 7vw, 6rem); }
+.display-md { font-size: clamp(1.75rem, 4.4vw, 3.5rem); }
+
+/* Latin technical metadata — Roboto Condensed, caps, tracked out */
+.tech {
+  font-family: var(--font-cond);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-feature-settings: "tnum" 1;
+}
+.tech-sm { font-size: 0.6875rem; letter-spacing: 0.2em; }
+
+/* Latin display — the "MADE WITH IMPACT" voice */
+.cond {
+  font-family: var(--font-cond);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.005em;
+  line-height: 0.92;
 }
 
-::-webkit-scrollbar-thumb {
-  background: var(--clr-orange);
-  border-radius: 4px;
+.lede {
+  font-size: clamp(1.0625rem, 1.4vw, 1.3125rem);
+  line-height: 1.8;
+  font-weight: 300;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: var(--clr-orange-light);
+/* Arabic sits taller — give body copy room */
+.prose-ar { line-height: 1.95; }
+
+/* ---------- Signature graphics ---------------------------------------- */
+/* Hazard tape — the brand's diagonal safety stripe */
+.hazard {
+  --bar: 9px;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    var(--color-flare) 0,
+    var(--color-flare) var(--bar),
+    transparent var(--bar),
+    transparent calc(var(--bar) * 2)
+  );
 }
 
-/* ============ INDUSTRIAL UTILITIES ============ */
+/**
+ * Film grain — one fixed, blended layer for the whole document.
+ * The overhang is kept to 6% (just enough to hide the edges during the
+ * shimmer) rather than a full 50%: this layer is composited on every frame,
+ * so its area is the thing that costs, not the noise itself.
+ */
+.grain {
+  position: fixed;
+  inset: -6%;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.2;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: grain-shift 800ms steps(3) infinite;
+  will-change: transform;
+}
+@keyframes grain-shift {
+  0%   { transform: translate3d(0, 0, 0); }
+  33%  { transform: translate3d(-2%, 1.5%, 0); }
+  66%  { transform: translate3d(1.5%, -2%, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
 
-/* Hazard tape - diagonal orange/black stripes */
+/* Blueprint hairline grid */
+.blueprint {
+  background-image:
+    linear-gradient(to right, var(--color-rule-dark) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--color-rule-dark) 1px, transparent 1px);
+  background-size: 5rem 5rem;
+}
+.blueprint-light {
+  background-image:
+    linear-gradient(to right, var(--color-rule-light) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--color-rule-light) 1px, transparent 1px);
+  background-size: 5rem 5rem;
+}
+
+/**
+ * Scanlines — the horizontal ruling laid over flat orange fields throughout
+ * the identity manual. Sits on top of its parent as a ::after layer.
+ */
+.scanlines { position: relative; }
+.scanlines::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(12, 12, 12, 0.16) 0 2px,
+    transparent 2px 6px
+  );
+}
+
+/**
+ * Pentagon "tag" silhouette — the shield/luggage-tag shape used for the
+ * business cards, posters and badge frames.
+ */
+.tag-shape {
+  clip-path: polygon(0 12%, 50% 0, 100% 12%, 100% 100%, 0 100%);
+}
+.tag-shape-sm {
+  clip-path: polygon(0 7%, 50% 0, 100% 7%, 100% 100%, 0 100%);
+}
+
+/* Duotone treatment for photography */
+.duotone { filter: grayscale(1) contrast(1.25) brightness(0.88); }
+
+/* Yellow duotone — the second photo treatment in the manual */
+.duotone-volt { filter: grayscale(1) contrast(1.4) brightness(0.75) sepia(1) hue-rotate(10deg) saturate(6); }
+
+/* ---------- Motion primitives ----------------------------------------- */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+}
+
+/* Underline that wipes in from the reading edge */
+.link-wipe { position: relative; display: inline-block; }
+.link-wipe::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  bottom: -4px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s var(--ease-out-expo);
+}
+.link-wipe:hover::after,
+.link-wipe[data-active="true"]::after { transform: scaleX(1); }
+
+/* ---------- Legacy compatibility shim ----------------------------------
+   TEMPORARY. The previous components are still what main deploys until the
+   switchover commit, and they reference these three utilities. Kept here
+   byte-for-byte so the live site is unaffected while the new system lands
+   alongside it. Removed together with app/components. Do not use in new work.
+   ---------------------------------------------------------------------- */
 .hazard-tape {
   height: 20px;
   background: repeating-linear-gradient(
@@ -96,7 +269,6 @@ body {
     #111111 20px
   );
 }
-
 .hazard-tape-thin {
   height: 8px;
   background: repeating-linear-gradient(
@@ -107,12 +279,9 @@ body {
     #111111 12px
   );
 }
-
-/* Grain overlay via SVG feTurbulence */
 .grain-overlay {
   position: relative;
 }
-
 .grain-overlay::after {
   content: "";
   position: absolute;
@@ -124,107 +293,12 @@ body {
   background-repeat: repeat;
 }
 
-/* Industrial card - dark card with top stripe */
-.industrial-card {
-  background: #1a1a1a;
-  border: 1px solid rgba(255, 72, 0, 0.15);
-  border-radius: 12px;
-  overflow: hidden;
-  position: relative;
-}
-
-.industrial-card::before {
-  content: "";
-  display: block;
-  height: 4px;
-  background: repeating-linear-gradient(
-    -45deg,
-    #FF4800,
-    #FF4800 6px,
-    #111111 6px,
-    #111111 12px
-  );
-}
-
-/* Duotone orange overlay for images */
-.duotone-orange {
-  position: relative;
-}
-
-.duotone-orange::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(255, 72, 0, 0.4) 0%, rgba(17, 17, 17, 0.7) 100%);
-  mix-blend-mode: multiply;
-  pointer-events: none;
-}
-
-/* Marquee scrolling animation */
-@keyframes marquee {
-  0% {
-    transform: translateX(0);
+/* ---------- Accessibility --------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
   }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-/* ============ GLASS / CARDS ============ */
-
-/* Glassmorphism utility */
-.glass {
-  background: rgba(17, 17, 17, 0.5);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-.glass-strong {
-  background: rgba(17, 17, 17, 0.75);
-  backdrop-filter: blur(30px);
-  -webkit-backdrop-filter: blur(30px);
-  border: 1px solid rgba(255, 72, 0, 0.2);
-}
-
-/* Glow effects */
-.glow-orange {
-  box-shadow: 0 0 20px rgba(255, 72, 0, 0.3), 0 0 40px rgba(255, 72, 0, 0.2);
-}
-
-.glow-orange-strong {
-  box-shadow: 0 0 30px rgba(255, 72, 0, 0.5), 0 0 60px rgba(255, 72, 0, 0.3), 0 0 90px rgba(255, 72, 0, 0.2);
-}
-
-/* Gradient text */
-.gradient-text {
-  background: linear-gradient(135deg, #ffffff 0%, #FF4800 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  padding-block: 0.1em;
-  overflow: visible;
-}
-
-.gradient-text-orange {
-  background: linear-gradient(135deg, #ff7a33 0%, #FF4800 50%, #e04000 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  padding-block: 0.1em;
-  overflow: visible;
-}
-
-/* Border gradient animation */
-@keyframes borderGlow {
-  0%, 100% {
-    border-color: rgba(255, 72, 0, 0.3);
-  }
-  50% {
-    border-color: rgba(255, 122, 51, 0.6);
-  }
-}
-
-.border-glow {
-  animation: borderGlow 3s ease-in-out infinite;
+  .grain { animation: none; }
 }
